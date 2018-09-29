@@ -1,0 +1,1343 @@
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%\usepackage{multicol}        % Multi-column entries in tables
+%\usepackage{bm}		% Bold maths symbols, including upright Greek
+%\usepackage{pdflscape}	% Landscape pages
+%\usepackage{booktabs} % for the line indicating joined columns in a table
+\usepackage{multirow} % to join rows in a table
+\usepackage[referable]{threeparttablex}
+\usepackage{subfig} % to use subfloat for several images
+
+%\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+%\title[Short title, max. 45 characters]{MNRAS \LaTeXe\ template -- title goes here}
+\title[System IMF of the 25 Ori]{System IMF of the 25 Ori group from planetary-mass objects to high-intermediate-mass stars}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[G. Su\'arez et al.]{
+Genaro Su\'arez,$^{1}$\thanks{E-mail: gsuarez@astro.unam.mx}
+Carlos Rom\'an-Z\'u\~niga,$^{1}$
+Juan Jos\'e~Downes$^{2}$
+Miguel Cervi\~no,$^{3}$
+\newauthor
+C\'esar~Brice\~no$^{4}$
+Monika G.~Petr-Gotzens$^{5}$
+Katherina Vivas$^{4}$
+\\
+% List of institutions
+$^{1}$Instituto de Astronom\'ia, Universidad Nacional Aut\'onoma de M\'exico, Unidad Acad\'emica en Ensenada, Ensenada BC 22860, M\'exico\\
+$^{2}$Centro Universitario Regional del Este, Universidad de la Rep\'ublica, AP 264, Rocha 27000, Uruguay\\
+$^{3}$Instituto de Astrof\'isica de Canarias, c/ V\'ia L\'actea s/n, 38205 La Laguna, Tenerife, Spain\\
+$^{4}$Cerro Tololo Interamerican Observatory, Casilla 603, La Serena, Chile\\
+$^{5}$European Southern Observatory, Karl-Schwarzschild-Str. 2, 85748 Garching bei M\"unchen, Germany
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2015}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+%% Part 1: Introduction to the area of research, context and motivation
+The stellar initial mass function (IMF) is an essential input for many astrophysical studies. Although the numerous contributions to this topic, the IMF determinations in the whole mass range, from the planetary-mass objects to the massive stars, have been obtained only for a few stellar populations, limiting the conclusions about the nature of its complete shape. 25 Orionis group (25 Ori) is an ideal place to carry out an IMF study of its entire population.
+%% Part 2: The sample and general methodology
+Using optical photometry from DECam and the CIDA Deep Survey of Orion, as well as optical and near-infrared public photometry from $Hipparcos$, UCAC4, VISTA and 2MASS, we selected 1783 photometric member candidates in an area of 1.1$^\circ$ radius around the 25 Ori overdensity on the basis of their position in color-magnitude and color-color diagrams. With this sample we constructed the system IMF of 25 Ori, which is complete from 12 $M_{Jup}$ to 13 $M_\odot$. This system IMF is well described by a triple power-law with slopes $\Gamma=-0.72\pm0.08$, $0.91\pm0.10$ and $1.48\pm0.18$ for masses $m\le0.3\ M_\odot$, $0.3<m/M_\odot<1.0$, and $m\ge1.0\ M_\odot$, respectively. The best lognormal function fitted to masses lesser than 1 $M_\odot$ has $m_c=0.31\pm0.04$ and $\sigma=0.47\pm0.06$. Additionally, the best tapered power-law representation of the complete system IMF has $\Gamma=1.10\pm0.10$, $m_p=0.31\pm0.05$ and $\beta=2.06\pm0.14$.
+%% Part 3: Main message and result presented in the article
+We compared the resultant system IMF with that in a diversity of clusters and none significant differences where found. Similarly, the substellar to stellar mass ratio of $0.16\pm0.04$ we estimated for 25 Ori is in agreement with that in those clusters.
+% Part 4: The relevance of the work
+These results indicate that the formation mechanism is quite insensitive to the enviromental conditions. Also, the continuity of the system IMF across the entire mass range sopports the escenario of a common formation process for planetary mass objects to high-intermediate mass stars. We analyzed the change of the system IMF and of the substellar to stellar ratio for different areas and found evidence of some degree of mass segregation in 25 Ori. Finally, we confirmed that 25 Ori is a gravitationally unbound cluster.
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+stars: luminosity function, mass function, intermediate-mass stars, low-mass, brown dwarf, formation, open clusters and associations: individual (25 Orionis)
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+% What is the general relevance and limitations of the study of the IMF
+The mass spectrum of the members of a stellar population at birth is known as initial mass function (IMF). The IMF is the main product of the star formation process and is one of the fundamental astrophysical quantities. Since the \citet{Salpeter1955} IMF study, there have been many contributions to this topic to understand how it behaves and its origin, but only few of them focus on the whole mass range of the populations, limiting the conclusions about its complete shape \cite[e.g.][and references therein]{Bastian2010}.
+
+Observational IMF studies in a wide range of masses allow to analyze the continuity of the star formation process over about three orders of magnitude of mass, which also help to constrain initial conditions of star formation models. These kind of studies are also important to understand if the star formation process is sensitive or not to environmental conditions and/or time, which is the so-called universality of the IMF \cite[e.g.][]{Kroupa2013,Offner2014}.
+%By studying the IMF, star-formation theory is being tested.
+%it its still under discussion, specially for the low-mass regime" ... Follow comment from Carlos and abstract modification from Juan. We must keep focus on the completeness of the mass range.} \cite[e.g.][and references therein]{Bastian2010}. \textcolor{blue}{It is important to add the review from Offner et al.}
+
+%\textcolor{blue}{Please add here (briefly) the motivations on the study of the IMF. What are the main questions? Mention the universality of the IMF as well as the IMF as the primordial output of the star formation process which allow to test the theoretical predictions.}
+
+%\textcolor{blue}{Please add briefly the limitations in obtaining the IMF from observations. It will help you connecting the next paragraph.}
+To observationally determine the IMF of a resolved population first is obtained the luminosity function (LF) of a sample of stars in a defined volume. Then, the LF is converted to the present day mass function (PDMF) or the masses of the stars are estimated by assuming a mass-magnitude relationship. Finally, the PDMF is corrected by the star formation history, stellar evolution, cluster dynamical evolution, galactic structure and binarity to obtain the IMF. These steps have their own issues that makes the IMF determination a non straightforward task. 
+
+Many of the troubles when determining the IMF are minimized when working with young stellar clusters ($\lesssim 10$ Myr). They are useful laboratories for observational studies of the IMF in a wide range of masses because objects are brighter in the pre-main sequence (PMS) phase than on the main sequence (MS), none or minimum correction by the stellar evolution of their members is necessary, their spatial distributions are relatively small (for groups beyond the solar neighborhood) and their members have basically the same age, metallicity and distance. However, an important issue to be taken into account when working, specially, with embedded clusters \citep[$\lesssim3$ Myr; ][]{Lada-Lada2003} is the extinction, which complicates the detection of the least massive objects but helps to separate the population from the background contamination. Another important issue when studying stellar clusters is their dynamical evolution over time, causing a loss of the low-mass members, becoming dynamically mass segregated \citep[e.g., ][]{Elmegreen2000}. About 10\% of the low-mass stars (LMSs) and brown dwarfs (BDs) are expected to be lost for cluster with ages of about 100 Myr \citep{deLaFuenteMarcos-deLaFuenteMarcos2000}. Therefore, for stellar clusters with an age between 5 and 10 Myr there is a good compromise between extinction, youth and dynamical evolution for a complete determination of the IMF.
+
+%\textcolor{blue}{Please mention that the one major caveat in studying stellar clusters is that they dynamically evolve over time and it could result in mass segregation.} 
+
+%\textcolor{blue}{So, add something like: "at the age of 25 Ori we have a very good compromise between extinction, youth and dynamical evolution for a complete determination of the IMF".}
+
+% Summary of the IMF from clusters
+% How many young clusters have determinations of the IMF?
+% The mean problems in obtaining the IMF from clusters are ...
+
+%\textcolor{blue}{"Some" I think we should give a complete list here. Do you remember if there are more clusters with their complete IMF studied than those you are citing here?} 
+The best studied clusters in the literature in terms of their IMFs over a wide mass range are: Pleiades \citep[0.03~-~10 $M_\odot$;][]{Moraux2003}, Blanco 1 \citep[0.03~-~3 $M_\odot$;][]{Moraux2007a}, Collinder 69 \citep[0.016~-~20 $M_\odot$;][]{Bayo2011}, $\sigma$ Ori \citep[0.006~-~19 $M_\odot$;][]{PenaRamirez2012}, the Orion Nebula Cluster \citep[ONC; 0.025~-~3 $M_\odot$, $\approx$0.005~-~1 $M_\odot$;][respectively]{DaRio2012,Drass2016}, and RCW 38 \citep[0.02~-~20 $M_\odot$;][]{Muzic2017}. All these studies present the IMF did not corrected by unresolved multiple systems and therefore they refer to the so called system IMFs instead of the single-star IMFs \citep{Chabrier2003a}. However, the studies by \citet{Moraux2003} and \citet{Muzic2017} also present the single-star IMFs. In Table \ref{tab:imf_literature} we summarize the resulting parameterizations of these system IMFs as well as the employed theoretical models. For parameterizations of a larger sample of clusters but in smaller mass ranges see Table 1 from \citet{DeMarchi2010} and Table 4 from \citet{Muzic2017}, mainly, for low-mass stars. Although the tables indicated above show significant differences between the IMF parameterizations, before any claim concerning variations of the IMF, more complete and systematic observational studies are needed in populations with different environments, evolutionary stages and populations, as mentioned in \citet{Bastian2010} and \citet{Offner2014}.
+
+%We stress that, strictly speaking, our mass function is actually a “system” mass function rather than a proper “initial” mass function, in the sense that we do not account for unresolved binaries or multiple systems (sentence from Da Rio et al. 2012).
+
+\begin{table*} \scriptsize
+ \caption{System IMF parameterizations over a wide mass range in several young clusters.}
+ \label{tab:imf_literature}
+ \begin{threeparttable}
+  \begin{tabular}{lcccccccccc}
+   \hline
+ 	Cluster      & Age   &       \multicolumn{3}{c}{Lognormal}          &         \multicolumn{4}{c}{Power Law}                & Model  & Ref  \\
+ 	             &       & $m_c$         &    $\sigma$   & $m$ range    & $\Gamma_1$ & $m$ range$^a$   & $\Gamma_2$  & $m$ range$^b$   &        & \\
+ 	             & [Myr] & [$M_\odot$]   &               & [$M_\odot$]  &            & [$M_\odot$]     &             & [$M_\odot$]     &        & \\
+%    Unit & Unit & Unit & Unit & Unit & Unit & Unit & Unit & Unit & Unit \\
+   \hline
+   \multirow{2}{*} {RCW 38} & \multirow{2}{*} {1$^c$} &               &               &              & -0.29$\pm$0.11     & 0.02-0.50  & 0.60$\pm$0.13     & 0.50-20 & \multirow{2}{*} {BT-Settl+PARSEC} & \multirow{2}{*} {a} \\
+                            &       &               &               &              & -0.58$\pm$0.18     & 0.02-0.20  & 0.48$\pm$0.08     & 0.20-20 &                                   &                     \\
+   \multirow{2}{*} {ONC} & \multirow{2}{*} {2} & 0.35$\pm$0.02$^d$ & 0.44$\pm$0.05$^d$ & \multirow{2}{*} {0.025-3} & -1.12$\pm$0.90$^d$     & 0.025-0.30 & 0.60$\pm$0.33$^d$     & 0.30-3  & NextGen & \multirow{2}{*} {b} \\
+                         &   & 0.28$\pm$0.02 & 0.38$\pm$0.01     &                           & -2.41$\pm$0.25     & 0.025-0.17 & 1.30$\pm$0.09     & 0.17-3  & DM98 &                                    \\
+   \multirow{2}{*} {$\sigma$ Ori} & \multirow{2}{*} {3$^e$} & 0.24$\pm$0.09$^f$ & 0.53$\pm$0.19$^f$ & 0.006-1  & \multirow{2}{*} {-0.40$\pm$0.20} & \multirow{2}{*} {0.006-0.35} & \multirow{2}{*} {0.70$\pm$0.20} & \multirow{2}{*} {0.35-19} & \multirow{2}{*} {Siess+Lyon} & \multirow{2}{*} {c} \\
+                                  &       & 0.27$\pm$0.09$^f$ & 0.63$\pm$0.15$^f$ & 0.006-19 &                                  &                              &                                 &                           &                                  &                                           \\
+   Collinder 69 & 4-6$^g$     &              &               &              & -0.71$\pm$0.10$^h$ & 0.01-0.65  & 0.82$\pm$0.05$^h$ & 0.65-25 & Siess+COND    & d \\
+   Blanco 1     & 100-150     &0.36$\pm$0.07 & 0.58$\pm$0.06 & 0.03-3       & -0.31$\pm$0.15     & 0.03-0.60  &                   &         & NextGen+DUSTY & e \\
+   Pleiades     & 125$^i$     & 0.25          & 0.52          & 0.03-10      & -0.40$\pm$0.11     & 0.03-0.48  & 1.7               & 1.5-10  & NextGen       & f \\
+   \hline
+  \end{tabular}
+  \begin{tablenotes}[para,flushleft]
+    $^a$For the low-mass objects.\\
+    $^b$For the intermediate- and high-mass stars.\\
+    $^c$\citet{Getman2014b}.\\
+    $^d$For sources older than 1 Myr.\\
+    $^e$\citet{ZapateroOsorio2002}.\\
+    $^f$Mean values of the two set of parameters obtained combining \citet{Baraffe1998} and \citet{Siess2000} models at different cutoffs (0.3 and 1 $M_\odot$).\\
+    $^g$\citet{Dolan1999}.\\
+    $^h$Mean value of the six reported values and the error as the standard deviation.\\
+    $^i$\citet{Stauffer1998}.\\
+    NextGen: \citet{Baraffe1998}, DM98: \citet{DAntona1998}, Siess: \citet{Siess2000}, DUSTY: \citep{Chabrier2000}, COND: \citep{Baraffe2003}, Lyon: NextGen, DUSTY and COND, BT-Settl: \citet{Baraffe2015}, and PARSEC: \citet{Bressan2012} and \citet{Chen2014}.\\
+    References: (a) \citet{Muzic2017}, (b) \citet{DaRio2012}, (c) \citet{PenaRamirez2012}, (d) \citet{Bayo2011}, (e) \citet{Moraux2007a}, and (f) \citet{Moraux2003}.
+  \end{tablenotes}
+ \end{threeparttable}
+\end{table*}
+
+%Pleiades: system IMF, 125 Myr old and 0.03 mag of extinction \citep{Stauffer1998}.
+%Blanco 1: system IMF, 100-150 Myr old and low extinction of 0.03 mag \citep{Moraux2007a}.
+%Collinder 69: system IMF, 4-6 (5) Myr old \citep{Dolan1999}, 0.36 mag of extinction \citep{Duerr1982}.
+%sigma Ori: system IMF, 3 Myr old \citep{ZapateroOsorio2002}, $\le 0.5$ mag of extinction \citep{Bejar2001}.
+%ONC: system IMF, 2 Myr old, 2 mag of extinction \citep{DaRio2012}.
+%RCW 38: system IMF, 1 Myr old \citep{Getman2014b}, $\approx 10$ mag of extinction \citep{Muzic2017}.
+%
+%\textcolor{blue}{I think Table 1 should include mean extinction 
+%and age. Additionally I wonder if these surveys are spatially complete. Particularly, is it the Pleiades observations spatially complete?}
+
+% Summary about the 25 Ori group
+% Briceno2005,2007 radius working with WTTSs and a CTTSs. D14: radius of 0.5 working with LMS and BD candidates. B18: radius of 0.7 working with confirmed LMSs.
+An interesting young stellar group for studying the IMF over its whole mass range and full spatial extent is 25 Orionis (25 Ori), the most prominent spatial overdensity of PMS stars in Orion OB1a originally detected by \citet{Briceno2005}. The estimated areas for this group are 1.0$^\circ$, 0.5$^\circ$ and 0.7$^\circ$ by \citet{Briceno2005,Briceno2007}, \citet{Downes2014} and \citet{Briceno2018}, respectively, which makes plausible an observational study covering its full spatial extent.
+%\textcolor{blue}{It is not clear what the overdensity is.
+%You should explain what is the complete spatial coverage of
+%the group and what do you mean with "overdensity". Please note
+%that you are using the word "overdensity" in two different meanings: first, what Cesar detect, second the area in which 
+%the TTS are more concentrated. It is confusing. It should be clarified in order to convince the reader about the spatial completeness of our observations which is a key point.}
+The 25 Ori group is a 7-10 Myr population at 356$\pm$47 pc from the sun and affected by a minimum interstellar extinction of 0.29$\pm$0.26 mag (see Section \ref{sec_app:distance_extinction}), which allow even the detection of members down to planetary-masses \citep{Downes2015}. Several previous studies have focused on characterizing the 25 Ori population; \citet{Kharchenko2005,Kharchenko2013} for the intermediate- and massive-mass stars, \citet{Briceno2005,McGehee2006,Briceno2007,Hernandez2007a,Biazzo2011,Downes2014,Suarez2017,Briceno2018} for the LMSs and \citet{Downes2014,Downes2015} for the very low-mass and BD members.
+
+%In 2014, \citeauthor{Downes2014} determined the system IMF of 25 Ori in the mass range $0.02\lesssim M/M_\odot\lesssim0.8$ working with a sample of photometric member candidates inside an area of 3x3 deg$^2$ around the 25 Ori overdensity. They found that the system IMF of the entire survey is well described by either two power laws with slopes $\alpha_1=-1.73\pm0.31$ and $\alpha_2=0.68\pm0.41$ for the mass ranges $0.02\le M/M_\odot\le0.08$ and $0.08\le M/M_\odot\le0.8$, respectively, or a lognormal function with parameters $m_c=0.21\pm0.02$ and $\sigma=0.36\pm0.03$ for the whole studied mass range. Additionally, for the IMF of the overdensity they obtained the slopes $\alpha_1=-1.97\pm0.02$ and $\alpha_2=0.37\pm0.04$ in the aforementioned mass ranges and the parameters $m_c=0.22\pm0.02$ and $\sigma=0.42\pm0.05$ for the full mass range.
+In 2014, \citeauthor{Downes2014} reported the first and only available determination of  the system IMF of 25 Ori in the mass range $0.02\lesssim M/M_\odot\lesssim 0.8$ working with a sample of photometric member candidates inside an area of 3x3 deg$^2$ around the 25 Ori overdensity. They found that the system IMF in the entire survey is well described by either two power laws with slopes $\Gamma_1=-2.73\pm0.31$ and $\Gamma_2=-0.32\pm0.41$ for the mass ranges $0.02\le M/M_\odot\le0.08$ and $0.08\le M/M_\odot\le0.5$, respectively, or a lognormal function with parameters $m_c=0.21\pm0.02$ and $\sigma=0.36\pm0.03$ for the whole studied mass range. Additionally, for the system IMF of the overdensity (0.5$^\circ$ radius) they obtained $\Gamma_1=-2.97\pm0.02$, $\Gamma_2=-0.63\pm0.04$, $m_c=0.22\pm0.02$ and $\sigma=0.42\pm0.05$ in the corresponding mass ranges.
+%\textcolor{blue}{This is an example of how relevant is to explain 
+%clearly what the overdensity is. In this paragraph it is not clear why the system IMF was reported twice and what is the difference and/or the need for both of them.}
+
+% Brief description of the paper
+% The structure of the paper
+In this work we improve the previous determination of the system IMF of 25 Ori by including optical and near-infrared (NIR) photometry over its full spatial extent with sensitivity limits covering completely the whole stellar and sub-stellar mass range of the group ($0.01\lesssim M/M_\odot\lesssim13.0$). In Section \ref{sec:data} we present our observations and describe the public catalogs used to select the photometric member candidates over the full stellar mass range through the procedure  explained in Section \ref{sec:candidates}. In Section \ref{sec:uncertainties} we discuss the different sources of uncertainty, contamination, incompleteness and biases that could affect the determination of the IMF in the particular case of 25 Ori and how we corrected them. The LF is presented in Section \ref{sec:LF} and the corresponding system IMF is determined in Section \ref{sec:IMF}, together with its parameterizations. Finally, in Section \ref{sec:conclusions} we discuss our results and summarize the conclusions.
+%In this work we improve previous determination of the system IMF of 25 Ori \citep{Downes2014} by including spatially complete optical and near-IR photometry whose sensitivity limit covers the complete stellar mass range of the group ($0.01\lesssim M/M_\odot\lesssim10.0$). In Section \ref{sec:DECam} we present our new observations performed in order to detect member candidates having masses $\sim10.0\ M_{Jup}$ down to the planetary mass domain which complement the photometry from literature we used for intermediate and high mass stars as summarized in Section \ref{sec:catalogs}. The procedure for the selection of photometric candidates is shown in Section \ref{sec:candidates}. The different sources of uncertainty, contamination and biases that could affect the determination of the IMF in the case of 25 Ori are discussed in Section \ref{sec:uncertainties}. The observed luminosity function and its correction accounting for several biases and contamination sources are presented in Section \ref{sec:LF} and its conversion into the system-IMF through the selection of a mass-luminosity relationship is presented in Section \ref{sec:IMF} together with its parameterizations. Finally, a summary of findings and conclusions are presented in Section \ref{sec:conclusions}.
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+
+\section{Photometric Data}
+\label{sec:data}
+
+\subsection{DECam observations}
+\label{sec:DECam}
+
+This work includes new very deep optical \textit{i}-band photometry of 25 Ori obtained using the Dark Energy Camera (DECam) mounted on the 4m Victor M. Blanco telescope at CTIO. DECam is a 570 Megapixel camera with an array of 62 2kx4k detectors with a plate scale of 0''.263 pixel$^{-1}$, covering a field of view (FOV) of 1.1$^\circ$ radius \citep{Flaugher2015}. Our DECam observations were performed on 2016 Feb 24 at 00:37:42 \texttt {UT} (PI: G. Su\'arez). We obtained 11x300s exposures in the $i$-band centered at $\alpha_{J2000}= 05^{\rm h} 25^{\rm m} 04^{\rm s}.8$ and $\delta_{J2000} = +01^{\circ} 37' 48''.6$ with an airmass $<1.3$ and a mean seeing of $\sim 0''.9$. During our observations two detectors were not functional, reducing the array to 60 usable detectors. In Section \ref{sec:spatial} we discuss how this fact, together with the gaps and the non circular configuration of the detectors, affect the spatial coverage of the DECam observations. In Figure \ref{fig:sky} we show the spatial coverage of our DECam data.
+
+%We downloaded the reduced and calibrated data produced by the DECam Community Pipeline \citep{Valdes2014} from the NOAO Science Archive.
+The reduced and calibrated data were produced by the DECam Community Pipeline \citep{Valdes2014} and downloaded from the NOAO Science Archive\footnote{\url{http://archive.noao.edu/}}. 
+The resulting data have processing level of 2, which means they are single reduced frames after removing the instrument signature and applying the WCS and photometric calibrations, as explained in the NOAO Data Handbook\footnote{\url{http://ast.noao.edu/sites/default/files/NOAO\_DHB\_v2.2.pdf}}.
+
+We combined the individual frames using the \texttt{imcombine} routine of IRAF\footnote{IRAF is distributed by NOAO, which is operated by AURA, Inc., under cooperative agreement with the NSF.}, considering a ccdclip of 3.5$\sigma$ and correcting the offset of the individual images using the WCS astrometry. The photometry was made using a modification of the $PinkPack$ pipeline \citep{Levine2006} to work with the DECam data, which uses the SExtractor software \citep{Bertin-Arnouts1996} for the detections, IRAF/APPHOT for the aperture photometry and IRAF/DAOPHOT for the PSF photometry. To calibrate the resulting $i$-band photometry we added the zero point of 25.18 mag for our DECam observations and a 0.65 mag zero-point offset with respect to the Sloan Digital Sky Survey (SDSS) Data Release 9 (DR9) \citep{Ahn2012}. This offset was obtained considering roughly 25000 stars from the SDSS, with $i$-band magnitudes between 16.5 and 22.0 and with photometric uncertainties lesser than 0.1 mag (typical errors of 0.04 mag), which do not have high probability of being variable stars according to the CIDA Variability Survey of Orion \citep[CVSO; ][]{Briceno2005,Mateu2012}. The detectors of the DECam array having SDSS counterparts lie mainly towards the south of the array, with a few of them (about 6) in the north, representing roughly a half of the whole area covered by the DECam observations and with a typical $\sigma$ of the residuals equal to 0.1 mag. We checked that the photometric solutions of these detectors are essentially the same, which allowed us to calibrate the rest of the detectors without SDSS counterpart.
+
+%\textcolor{blue}{Two important things here: First, you are using the
+%SDSS stars as standards despite they are not. Although they are not
+%"first order" standards such as Landolt's stars, I remember we defined a good set of SDSS stars by removing those showing variability in the CVSO. So, we are mitigating the uncertainty
+%of using SDSS stars as standards by using a huge number of them and removing those known as variables. Second, we have SDSS stars
+%only in the southern part of the array, so, any extrapolation 
+%of the calibration constant to the detectors placed in the northern part of the array depends on the stabillity of the photometric
+%coeficients between different CCDs. This is a key issue.  I remember we talk with Kathy about that and she say that the
+%photometric solutions are essentially the same for all the detectors. Please check that. If it is not well explained, probably  the referee will not belive in our calibration. For instance you can mention the $\sigma$ of the distribution of offsets
+%obtained for the southern detectors.}
+
+%In Table \ref{tab:catalogs} we summarized the spatial coverage (see Section \ref{sec:spatial}) of our DECam data in a field of view of 2.2$^\circ$ around the center of the CCD array and its photometric sensitivities (see Sections \ref{sec:merged_cat} and \ref{sec:sensitivity}).
+
+% Todos los días se toman dome flats en todos los filtros disponibles. No es posible tomar skyflats con DECam.
+% Las imágenes se procesan automáticamente con el pipeline de NOAO. 
+% pipeline calibrated DECam data
+
+% The fully reduced and stacked images were produced by the DECam community pipeline (Valdes et al. 2014)
+% Using IRAF, all  images  were  bias  subtracted  and  flat-field  corrected  using nightly dome flats, then registered using msccmatch for alignment. Residual gradients across the CCDs were removed using imsurfit , and the resulting images were stacked using mscimatch to estimate the relative normalizations.
+
+\begin{figure*}
+	\includegraphics[width=1.0\textwidth]{sky}
+	\caption{Spatial distribution of our photometric member candidates (black points; see Section \ref{sec:candidates}). The dash-dotted circle shows the FOV of our DECam observations obtained with the array of detectors indicated by the brown boxes. The dashed circles indicate from the center outwards the 25 Ori estimated areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007} centered at $\alpha_{J2000}=81.2^\circ$ and $\delta_{J2000}=1.7^\circ$. The black squares indicate the labeled stellar groups (25 Ori by \citealt{Briceno2005}, ASCC 18 and ASCC 20 by \citealt{Kharchenko2013} and HR 1833 by \citealt{Briceno2018}). The gray background map indicates the density of LMS and BD photometric member candidates of Orion OB1a in 10'x10' bins \citep{Downes2014}. The white star symbol shows the position of the 25 Ori star.}
+	\label{fig:sky}
+\end{figure*}
+
+\subsection{CIDA Deep Survey of Orion}
+\label{sec:CDSO}
+
+Additional optical $I_c$-band photometry for sources brighter that the DECam saturation limit (see Section \ref{sec:sensitivity}) was obtained from the CIDA Deep Survey of Orion \citep[CDSO; ][]{Downes2014}. This catalog was constructed coading the photometry from the CVSO, obtained at the National Astronomical Observatory of Venezuela. The area covered by this survey extends beyond the limits of our DECam data.
+
+%\textcolor{blue}{I have a concern about the area coverages
+%in Table 2:
+%All of them are 100\% complete with the exception of DECam.
+%I think it is an artifact due to the computation of
+%the fractional spatial coverage on the basis of the circular
+%FOV. In other words, Decam's observations looks incomplete 
+%because the area you choose for the computation. I think the 
+%only spatial incompleteness of DECam came from the gaps between detectors and it should be smaller than the 30\% you found
+%considering the areas surrounding the DECam FOV.}
+
+\subsection{Photometry from Literature}
+\label{sec:catalogs}
+\subsubsection{Optical Photometry}
+
+The optical data from DECam and the CDSO were complemented for bright sources with the $i$-band photometry from the UCAC4 catalog \citep{Zacharias2013} as well as the $I_c$-band photometry from the $Hipparcos$ catalog \citep{Perryman1997} for the brightest sources in 25 Ori and Orion OB1a.
+
+%Brief description of the CDSO, USNO and UCAC surveys focus on the relevant properties for the estimation of the system-IMF.
+
+\subsubsection{Near-IR Photometry}
+
+%Brief description of the VISTA, IRAC and WISE surveys focus on the relevant properties for the detection of the IR excesses and their effect on the estimation of the system-IMF.
+We complemented the optical photometry with $Z$, $Y$, $J$, $H$, and $K_s$-band photometry from the VISTA catalog \citep{Petr-Gotzens2011} for the fainter sources and with the $J$, $H$, and $Ks$-band photometry from the 2MASS catalog \citep{Skrutskie2006} for brighter sources.
+
+In Table \ref{tab:catalogs} we summarized the spatial coverage (see Section \ref{sec:spatial}) of 25 Ori, considering the estimated areas by \citet[0.5$^\circ$ radius; ][]{Downes2014} and \citet[0.7$^\circ$ radius; ][]{Briceno2018}, and the photometric sensitivities (see Section \ref{sec:sensitivity}) of the optical and NIR catalogs used in this study.
+
+%\textcolor{blue}{I think Table 2 must include also the spatial resolution because it is a key issue during the cross-match procedure discussed in the next section.}
+
+% 2MASS: FWHM=2.5'' under the best seeing conditions \citep{Skrutskie2006}.
+% CDSO:  FWHM=2.5-2.9. Seeing=2.2 arcsec \citep{Downes2014}.
+% VISTA: seeing=0.7-0.9 in sigma Ori \citep{PenaRamirez2012}.
+% DECam: seeing=0.9.
+% UCAC4: typical FWHM=1.7-2.5 pix, pixel scale=0.905 arcsec/px -> FWHM=0.81-1.54'' \citep{Zacharias2017}
+% Hipparcos: ??
+
+%\textcolor{blue}{I think Table 2 must include also the spatial resolution, the saturation magnitude and the masses that corresponds to that saturation. This way, will be clear the
+%mass range covered by each survey. The spatial resolution
+%is important because it is a key issue during the cross-match
+%procedure discussed in the next section.}
+
+% Guarda: el siguiente parrafo es literal de Downes 2014 o 2015
+% y fue puesto como referencia
+
+%We complemented the I-band photometry with J, Z, Y, H and Ks-band 
+%photometry from the VISTA survey. In order to detect possible IR 
+%excesses affecting the candidate selection we made the spectral 
+%energy distributions (SED) of the photometric candidates (see
+%Section \ref{candidates}) by adding photometry from IRAC-Spitzer 
+%at $3.6$, $4.5$, $5.8$ and $8.0~\mu$ from \citet{hernandez2007} 
+%and Brice\~no et al. (in preparation), and photometry from the 
+%WISE All-Sky Source Catalog \citep{wright2010} at $3.4$, $4.6$, 
+%$12$ and $22~\mu\rm{m}$ and improve the optic sampling by adding 
+%photometric data in the g, r, and z-bands from the Sloan Digital 
+%Sky Survey Catalog Data Release 8 \citep{Adelman-McCarthy2011}.
+
+%Due to the differences in sensitivity and spatial coverage between the several surveys and observations considered here (see Section \ref{uncertainties}), not all the additional photometric bands are available for all the point sources in the field but all of them have information in I and J bands whithin the combined sensitivity limits shown in Figure \ref{cm}.
+
+\begin{table*}
+\caption{Spatial coverage of 25 Ori$^1$ and photometric sensitivities of the catalogs used in this study.}
+%\begin{center}
+  \small
+  \label{tab:catalogs}
+  \begin{threeparttable}
+ 	%\begin{tabular}{@{}p{1.1cm}p{0.5cm}p{0.8cm}cccccp{0.1cm}}
+ 	\begin{tabular}{lcccccccc}
+ 	\hline
+ 	Survey      & Phot.    & FWHM      & Area         & Satur.       & Comp.        & Satur.     & Comp.       &  Ref. \\%& Limiting  \\
+ 	            & Band     & (arcsec)  & [\%]         & (mag)        & (mag)        & ($M_\odot$)& ($M_\odot$) &       \\%& (mag)     \\
+ 	\hline
+ 	DECam       & $I_c$    & 0.9       & $\approx 86$ & 16.0         & 22.50        & 0.16       & 0.012       & 1     \\%& 25.0      \\
+ 	CDSO        & $I_c$    & 2.9       & 100          & 13.0         & 19.75        & 0.86       & 0.020       & 2     \\%& 21.5      \\ 
+ 	UCAC4       & $I_c$	   & 1.54      & 100          & 7.0          & 14.75        & 6.33       & 0.340       & 3     \\%& 16.0      \\
+ 	$Hipparcos$ & $I_c$	   & ---       & 100          & $<$5.0       & ---          & $>$13.5    & ---         & 4     \\%& 16.0      \\
+ 	VISTA       & $J$      & 0.9       & 100          & 12.0         & 20.25        & 0.85       & $<$0.010    & 5     \\%& 21.5      \\
+ 	2MASS       & $J$      & 2.5       & 100          & 4.0          & 16.25        & 19.3       & 0.028       & 6     \\%& 17.0      \\
+ 	\hline
+ 	\end{tabular}
+  \begin{tablenotes}[para,flushleft]
+	References: (1) PI: G. Su\'arez; (2) \citet{Downes2014}; (3) \citet{Zacharias2013}; (4) \citet{Perryman1997}; (5) \citet{Petr-Gotzens2011}; (6) \citet{Skrutskie2006}\\
+    $^1$Considering an area of $0.7^\circ$ or $0.5^\circ$ radius by \citet{Briceno2018} and \citet{Downes2014}, respectively.
+  \end{tablenotes}
+ \end{threeparttable}
+\end{table*}
+
+%\subsection{Transformation of the Photometric Data}
+\subsection{Merged Optical-NIR Catalog}
+\label{sec:merged_cat}
+
+%With the optical and NIR data we constructed a merged catalog. First, we transformed the $i$-band from UCAC4 and DECam to the Cousin system $I_c$-band, which is present in the stellar models (\citealt{Baraffe2015} and \citealt{Marigo2017}) we used to assign the masses of the photometric member candidates (see Section \ref{sec:mass-luminosity}). This photometric system is already used by the CDSO data. As we have only one photometric band in the DECam data we cannot use color-dependent transformation equations\footnote{\url{http://www.sdss3.org/dr8/algorithms/sdssUBVRITransform.php}}, therefore, we subtracted to the $i$-band photometry from UCAC4 and DECam the residuals with respect to the CDSO catalog. These values are 0.45 and 0.42 mag for the DECam and UCAC4 catalogs, respectively. These residuals were obtained working only with data within the saturation and completeness limits of the catalogs involved (see Table \ref{tab:catalogs}) and with photometric uncertainties smaller than 0.2.
+
+From the individual catalogs with optical and NIR data we constructed one single general catalog, as explained in this section.
+
+\subsubsection{Transformation of optical photometry into Cousins system}
+\label{sec:photometry_transformation}
+We transformed the $i$-band photometry from UCAC4 and DECam to the Cousin system $I_c$-band, which is a photometric band predicted by the PARSEC-COLIBRI \citep{Marigo2017}, BT-Settl \citep{Baraffe2015} and COND \citep{Baraffe2003} isochrones used to estimate masses to construct the system IMF (see Section \ref{sec:mass-luminosity}). To obtained the $I_c$ magnitudes from UCAC4 and DECam, we used the empirical transformations by \citet{Jordi2006}, which relate SDSS photometry with other photometric systems included the Cousins system. In the case of UCAC4 we used the $r$- and $i$-band photometry and the transformations including these magnitudes. For the DECam catalog, as we only have one band photometry, we used the $i$-band magnitudes from DECam together with the $z$-band magnitudes from the VISTA catalog, after we converted the $z$ magnitudes to the $z$-band system of SDSS. More details about these transformations are described in Appendix \ref{sec_app:photometry_transformation}. Because the Cousins photometric system is already used by the CDSO and $Hipparcos$ catalogs, after the transformation of the DECam and UCAC4 photometries, the resulting complete sample of optical observations are in the same photometric system.
+
+%\textcolor{blue}{Additionally you should mention how the cross match with VISTA was performed particularly how you deal with possible multiple matches that can modify the calibration.}
+
+%\textcolor{blue}{Note that you started the last paragraph with a
+%"First" but you didn't use a "Second" after that. I think this section is important and has a lot of information. What about dividing it into sub-sections? what about something like: Transformation into Cousins system, Photometric uncertainties, Merge and cutoffs?}
+
+\subsubsection{Photometric uncertainties}
+\label{sec:photometry_uncertainties}
+Before we define the brightness ranges where each catalog will be used, we fitted exponential functions to the photometric uncertainties of the optical and NIR catalogs with respect to the magnitude ($\delta I_c(I_c)$ for the optical data and $\delta J(J)$ for the NIR data). This way we can estimate the uncertainties of the data as a function of the photometric magnitudes, which will allow us to combine the catalogs considering the typical photometric uncertainties at each brightness point where the catalogs are joined. In Table \ref{tab:errors} we show the parameters for each catalog, working with magnitudes inside their saturation and completeness limits (see Section \ref{sec:sensitivity}).
+
+\begin{table}
+\caption{Spatial coverage of 25 Ori$^1$ and photometric sensitivities of the catalogs used in this study.}
+  \small
+  \label{tab:errors}
+  \begin{threeparttable}
+ 	\begin{tabular}{lcccc}
+ 	%\begin{tabular}{p{0.8cm}p{0.3cm}p{0.5cm}p{0.4cm}p{0.4cm}p{0.4cm}p{0.4cm}p{0.1cm}}
+ 	\hline
+ 	Catalog & Photometric &  $a$  &  $b$   & $c$   \\
+			& Band        &       &        &       \\
+ 	\hline
+ 	DECam   & $I_c$	& 0.005 & 25.861 & 1.042 \\
+ 	CDSO    & $I_c$	& 0.002 & 22.175 & 0.999 \\
+ 	UCAC4   & $I_c$	& 0.037 & 8.993  & 0.453 \\
+ 	VISTA   & $J$	& 0.002 & 16.870 & 0.732 \\
+ 	2MASS   & $J$	& 0.024 & 20.240 & 1.105 \\
+ 	\hline
+ 	\end{tabular}
+  \begin{tablenotes}[para,flushleft]
+	Note. The exponentials have the form $f(x)=a+e^{(cx-b)}$, where $x$ is the magnitude in the corresponding photometric band.
+  \end{tablenotes}
+ \end{threeparttable}
+\end{table}
+
+%\begin{table}
+%\centering
+%\caption{Exponentials fitted to the photometric uncertainties of the optical and NIR catalogs used in this study.}
+%	\small
+%	\label{tab:errors}
+% 	\begin{tabular}{@{}lcccc}
+% 	\hline \vspace{-.05in}
+% 	Catalog & Phot. &  $a$  &  $b$   & $c$   \\
+%			& Band  &       &        &       \\
+% 	\hline
+% 	DECam   & $I_c$	& 0.005 & 25.861 & 1.042 \\
+% 	CDSO    & $I_c$	& 0.002 & 22.175 & 0.999 \\
+% 	UCAC4   & $I_c$	& 0.037 & 8.993  & 0.453 \\
+% 	VISTA   & $J$	& 0.002 & 16.870 & 0.732 \\
+% 	2MASS   & $J$	& 0.024 & 20.240 & 1.105 \\
+% 	\hline
+% 	\end{tabular}
+%	The exponential has the form $f(x)=a+e^{(c*x-b)}$
+%\end{table}
+
+
+\subsubsection{Cutoffs and merged catalogs}
+\label{sec:cutoffs}
+The brightness ranges where each photometric catalog was used is related with their photometric sensitivities, described in Section \ref{sec:sensitivity} and reported in Table \ref{tab:catalogs}. The $I_c$-band photometry we used to have a combined optical catalog are as follows: $i)$ UCAC4 for $I_c<13.0+\delta I_c(13.0)$, $ii)$ CDSO for $13.0-\delta I_c(13.0)\leq I_c<17.0+\delta I_c(17.0)$, and $iii)$ DECam for $I_c\geq 17.0-\delta I_c(17.0)$. We also added 25 stars (including 25 Ori) from the $Hipparcos$ catalog, which are too bright to have $I_c$ magnitudes from UCAC4. The $J$-band photometry used to have a combined NIR catalog are as follows: $i)$ 2MASS for $J<13.0+\delta J(13.0)$, and $ii)$ VISTA for $J\geq 13.0-\delta J(13.0)$. Then, we removed 3$^{\prime\prime}$ duplicates from the optical and NIR catalogs and kept the sources with smaller photometric uncertainties. To join the optical and NIR catalogs we did a cross-match between them with a tolerance of 3$^{\prime\prime}$ using STILTS\footnote{\url{http://www.star.bris.ac.uk/~mbt/stilts/}} \citep{Taylor2006}.
+
+The final optical and NIR catalog has 110946 detections inside a FOV of 1.1$^\circ$ radius around the 25 Ori overdensity, being most of them (about 85\%) from the DECam and VISTA catalogs.
+
+\textcolor{blue}{Here is very important to mention how you deal with any issue due to the differences in the spatial resolutions. Remember that the correct tolerance for a cross-match came from the analysis of the spatial density of sources and the spatial resolution of the surveys involved. The difference in spatial resolution could produce repetitions as well as wrong identifications that must be commented.}
+
+%\textcolor{blue}{A final paragraph summarizing the resulting general catalog is needed, including the number of sources per filter. It will give an idea of the number of sources we deal with and how small the number of candidates results to be.}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Selection of Photometric Candidates}
+\label{sec:candidates}
+
+\subsection{PMS Locus}
+\label{sec:locus}
+The use of color-magnitude diagrams (CMDs) combining optical and NIR data has been successfully tested for identifying young stellar objects \citep[e.g. ][ and references therein]{Downes2014}. We selected photometric member candidates from the merged optical and NIR catalog according to their position in the $I_c$ vs $I_c-J$ digram shown in Figure \ref{fig:CMD}.
+
+To define the PMS locus in which the member candidates lie, we plotted a large set of 355 spectroscopically confirmed low-mass members of 25 Ori from \cite{Briceno2005,Briceno2007,Downes2014,Suarez2017,Briceno2018} and 15 spectroscopically confirmed very low mass and BD members of 25 Ori and Orion OB1a from \citet{Downes2015}. Most of these members were confirmed through similar spectroscopic procedures, which makes the sample more homogeneous. Additionally to the confirmed members, we also plotted 38 highly probable intermediate-mass members from \cite{Kharchenko2005}. The final sample of 408 spectroscopically confirmed members and highly probable members covers the spectral type range from B2 to M9 and trace a clear sequence in the $I_c$ vs $I_c-J$ diagram. This sequence corresponds to the empirical isochrone of 25 Ori, which was defined averaging the $I_c-J$ color of the confirmed members and high-probability members per $I_c$-bin (red dashed curve in Figure \ref{fig:CMD}). We stress that the resulting empirical isochrone is roughly consistent with the PARSEC-COLIBRI and BT-Settl 7 Myr isochrones. This empirical isochrone was our starting point to define the PMS locus considering the following uncertainties and effects:
+
+$i)$ \emph{Distance uncertainty.} From the sample of spectroscopically confirmed members of 25 Ori we obtained a mean distance of 356 pc with a standard deviation, $\sigma$, of 47 pc from the distances reported by \citet[BJ18; ][]{Bailer-Jones2018} on the basis of Gaia parallaxes \citep[Gaia DR2; ][]{GaiaCollaboration2018}. We considered only distances with uncertainties smaller than 20\% (more details in Section \ref{sec_app:distance}). Then, we broaden vertically the edges of the PMS locus in the CMD by adding the 1-$\sigma$ uncertainty in distance, which corresponds to the upwards and downwards offsets of 0.31 and 0.27 mag, respectively.
+
+%$ii)$ \emph{3D distribution of 25 Ori.} Assuming a 25 Ori larger radius of 0.7$^\circ$ \citep{Briceno2018}, which corresponds to 4.3 pc to a distance of 356 pc, we also moved vertically the edges of the locus. \textcolor{blue}{I think it is already included when you add the 1-$\sigma$ uncertainty in the previous step. What do you think?}
+
+$ii)$ \emph{Age uncertainty.} To estimate the change in the $I_c$ brightness ($\Delta I_c$) as a function of the $I_c-J$ color due to the uncertainty of the 25 Ori age \citep[6.1$\pm$2.4; ][]{Briceno2018}, we worked with the PARSEC-COLIBRI and BT-Settl isochrones, joined at 1 $M_\odot$. We obtained $\Delta I_c^I$ between the isochrone corresponding to the age of 25 Ori and that for the 25 Ori age minus the error. Similarly, we obtained $\Delta I_c^{II}$ considering the age of 25 Ori and the age plus the error. In most of the color range considered (-0.5-5.5 mag), $\Delta I_c^I$ is larger than $\Delta I_c^{II}$. We used $\Delta I_c^I$ to move upwards the upper edge of the locus and $\Delta I_c^{II}$ to move downwards the lower edge.
+
+%$ii)$ \emph{Extinction uncertainty.} The objects in the compiled list of confirmed member of 25 Ori have visual extinction derived from spectroscopically obtained spectral types. From these values we obtained a mean extinction of 0.29 mag with a standard deviation of 0.26 mag (see Section \ref{sec_app:extinction}). \textcolor{blue}{" ... considered 1 $\sigma$ uncertainty to move vertically and horizontally the edges of the locus." This is not what you did. You should change this sentence by something like: We considered the effect of extinction on the PMS locus by moving the edges in the direction of a reddening vector with an amplitude of $X$.}
+
+$iii)$ \emph{Unresolved binarity.} According to \citet{Briceno2007}, the observed spread in CMD of young stars in the 25 Ori field is roughly consistent with the upper limit of 0.75 mag expected from unresolved binaries. Thus, we used this limit to move upward the upper edge of the locus.
+
+$iv)$ \emph{Mean intrinsic variability.} We characterized the $I_c$-amplitude variations as a function of the magnitude for the 25 Ori member candidates from \citet{Downes2014} using the CVSO catalog. These variations range between 0.2 and 0.9 mag for candidates with $I_c$ magnitudes between 13.0 to 19.0. For brighter and fainter $I_c$ magnitudes we assumed these minimum and maximum variation limits, respectively. Thus, we used these $I_c$-amplitude variations to move upwards and downwards the upper and lower edges of the locus, respectively. For the $J$-band, \citet{Scholz2009} reported the low-level amplitude variations of about 0.2 mag for young LMSs and BDs. Assuming that when occurs a maximum or a minimum in the $I_c$-brightness of a variable source also takes place the maximum or minimum in the $J$-band brightness, we considered $I_c-J$ amplitude variations as the difference between the $I_c$-amplitude variations and the representative 0.2 mag variations in the $J$-band to move leftwards and rightwards the blue (lower) and red (upper) edges of the locus, respectively.
+
+$v)$ \emph{Photometric uncertainties.} We considered the exponentials fitted to the uncertainties of the optical and NIR catalogs as a function of the magnitudes to move both edges of the locus. The upper and lower edges were moved upwards and downwards, respectively, according to the uncertainty corresponding to each $I_c$-magnitude of the optical catalogs used in the different ranges. The blue (lower) and red (upper) edges of the locus were moved leftwards and rightwards, respectively, considering the uncertainties added in quadrature for each $I_c$ and $J$-magnitude from the catalogs used in the different ranges.
+
+%We selected photometric member candidates according to their position in the $I_c$ vs $I_c-J$ digram working with the merged optical and NIR catalog. To define the pre-main sequence (PMS) locus we located in this CMD the spectroscopically confirmed members \citep{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018} and high-probability candidates \citep{Kharchenko2005} of 25 Ori, which cover the spectral type range from B2 to M9 and trace a clear sequence in this space. This sequence corresponds to the empirical isochrone, which was defined averaging the $I_c-J$ color of the confirmed members and high-probability candidates per $I_c$-bin. The edges of the locus were defined considering the empirical isochrone and the following uncertainties present when locating sources in the $I_c$ vs $I_c-J$ digram: $i)$ distance uncertainty, $ii)$ unresolved binarity, $iii)$ mean intrinsic variability, $iv)$ photometric uncertainties, and $v)$ distance 3D distribution. For the first point, we considered the mean distance of 356$\pm47$ pc from the sample of aforementioned confirmed members of 25 Ori (excluding two members with distances of 625 and 777 pc) using the \citet{Bailer-Jones2018} distances with uncertainties less than 20\% (more details in Section \ref{sec_app:distance}). According to \citet{Briceno2007}, the observed spread in optical-NIR CMD of young stars in the 25 Ori field is roughly consistent with the upper limit of 0.75 mag expected from unresolved binaries, which we used in our locus definition. We characterized the $I_c$-amplitude variations working with the CIDA Variability Survey of Orion \citep[CVSO; ][]{Briceno2005,Mateu2012} catalog. These variations range between 0.2 and 0.9 mag for young stellar objects with $I_c$ brightness from 13.0 to 19.0. For sources brighter and fainter than this $I_c$ range we assumed variations of 0.2 mag and 0.9 mag, respectively. For the $I_c-J$-amplitude variation we assumed a value of 0.05 mag in the whole color range (REFERENCIA). The photometric uncertainties in the complete brightness and color ranges were obtained from the exponentials fitted to the data in Section \ref{sec:merged_cat}. Finally, the widening of the sequence due to the distance distribution was done assuming a 25 Ori radius of 0.7$^\circ$ \citep{Briceno2018}, which corresponds to 4.3 pc to a distance of 356 pc. The sources lying inside this PMS locus were considered as photometric member candidates of Orion OB1a.
+
+The sources lying inside this defined PMS locus were selected as photometric member candidates of 25 Ori. We selected 1803 candidates inside the DECam FOV having $I_c$ magnitudes from 5.08 to 25.7.
+
+The locus defined this way contains about 93\% of the confirmed members and highly probable members of 25 Ori. From the members lying out, on the left side, of the PMS locus, about 75\% of them have $>99\%$ probability of being variable stars in the CVSO. In Section \ref{sec:missed} we estimated the fraction of 25 Ori members we can lose in our photometric selection.
+
+It is important to notice in Figure \ref{fig:CMD} that in the $I_c$ range roughly between 9 and 13, the giant and subgiant branches cross the PMS locus, which increases the contamination by these sources in this brightness range. We can also see 7 faint sources ($I_c>17$ and $I_c-J>2.9$) lying out, on the red side, of the PMS locus. We checked these 7 sources into the DECam images and found that all of them are affected by the diffraction spikes of nearby bright stars, which explains a fainter $I_c$-band magnitude that produces a redder $I_c-J$ color.
+
+%These and additional factors should be taking into account before analyzing the mass distribution of the member candidates.
+
+%\textcolor{blue}{We must mention the members placed to the left of the PMS locus. This is very important. I suggest to add the fraction of objects in each case. The diagram could give the feeling that a high fraction of members fall outside the locus.}
+
+\begin{figure*}
+	\includegraphics[width=1.0\textwidth]{IvsI-J}
+	\caption{CCD used for the selection of photometric member candidates of 25 Ori. The red solid curves show the PMS locus defined considering the empirical isochrone (red dashed curve) and several uncertainties and effects when locating sources in this plot (see Section \ref{sec:candidates}). The open symbols represent the known spectroscopically confirmed members \citep{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018} and high-probable members \citep{Kharchenko2005} of 25 Ori, as shown in the label. These confirmed members and probable members trace the empirical isochrone. The gray dots indicate all the detections in our combined optical and NIR catalog in a FOV of 1.1$^\circ$ radius around the 25 Ori overdensity. The black dotted and black dashed lines show the $I_c$/DECam and $J$/VISTA completeness magnitudes, respectively. The brown and purple curves indicate, respectively, the BT-Settl and PARSEC-COLIBRI isochrones for ages, from top to bottom, of 1, 5, 7, 10 and 20 Myr. The arrow shows the dereddening vector for the mean extinction of 25 Ori. Masses from the mentioned models for an age of 7 Myr and a distance of 356 pc are labeled in the right axis. The giants and subgiants branches cross the PMS locus close to (0.9, 13) and (0.5, 11), respectively.}
+	\label{fig:CMD}
+\end{figure*}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+\subsection{Sources of Uncertainty, Contamination and Biases}
+\label{sec:uncertainties}
+
+Several previous works have studied the uncertainties and biases implicit in the observational determination of the IMF \citep[e.g.][]{Moraux2003,Moraux2007a,Moraux2007b,Ascenso2011,Dib2016}. In this section we characterize these effects in the case of 25 Ori and show how we corrected them.
+
+\subsubsection{Spatial Completeness}
+\label{sec:spatial}
+
+The CDSO catalog and all those from the literature considered in this work have a full spatial coverage of the FOV of the DECam observations.
+
+As explained in Section \ref{sec:DECam}, our DECam observations were performed by an array of 60 detectors configured as shown in Figure \ref{fig:sky} (brown boxes), therefore, part of the area in a FOV is lost by the gaps and because the array is not circular (if that FOV is not fully contain into the DECam array). To compute what fraction of a FOV is covered by the DECam data, we used the Monte Carlo method through the generation of random sources inside the FOV and counting those lying inside the detectors. For the DECam FOV, the DECam data cover $\approx70 \%$ of the area. If we consider the estimated areas of 25 Ori, the DECam observations have a coverage of $\approx 79\%$ for that by \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007} and $\approx86 \%$ for that by \citet[0.7$^\circ$ radius; ][]{Briceno2018} or by \citet[0.5$^\circ$ radius; ][]{Downes2014} around $\alpha_{J2000}$=81.2, $\delta_{J2000}$=1.7. These fractions will allow us to correct the LF and system IMF of 25 Ori by the spatial coverage of the DECam data (see Sections \ref{sec:LF} and \ref{sec:IMF}). In Table \ref{tab:catalogs} we report the spatial coverage of 25 Ori for all the catalogs used in this study.
+%As explained in Section \ref{sec:DECam}, our DECam observations were performed by an array of 60 detectors configured as shown in Figure \ref{fig:sky} (brown boxes), therefore, part of the area in a FOV is lost by the gaps and because the array is not circular (if that FOV is not fully contain into the DECam array). To compute what fraction of the FOV is covered by the DECam data we generated random sources inside a FOV and then we counted the sources lying inside the detectors. The fraction of these sources with respect to the total number of random sources corresponds to the fraction of the area covered by the DECam data in that FOV. \textcolor{blue}{Just say: "by montecarlo simulation." it is not necessary to explain that.} For the DECam FOV (see Section \ref{sec:DECam}) the DECam data cover $\approx70 \%$ of the area. If we consider the estimated area of 25 Ori by \citet[0.7$^\circ$ radius; ][]{Briceno2018} or by \citet[0.5$^\circ$ radius; ][]{Downes2014} around $\alpha_{J2000}$=81.2, $\delta_{J2000}$=1.7, the DECam observations have a coverage of $\approx86 \%$. These fractions will allow us to correct the LF and system IMF of 25 Ori by the spatial coverage of the DECam data (see Sections \ref{sec:LF} and \ref{sec:IMF}). In Table \ref{tab:catalogs} we report the spatial coverage of 25 Ori for all the catalogs used in this study.
+
+In Table \ref{tab:candidates} we list the number of member candidates inside the DECam FOV after applying the correction by the spatial coverage of the DECam data. If we had a full coverage of the DECam observations, we would expect 1919 photometric member candidates in the $I_c$ range from 5.08 to 25.7 mag. The mass range corresponding to this brightness range is obtained in Section \ref{sec:mass-luminosity}.
+
+\subsubsection{Photometric Sensitivity}
+\label{sec:sensitivity}
+
+The saturation and completeness magnitudes for the optical and NIR catalogs were determined as the brightest and faintest magnitudes between which the logarithmic number of sources per magnitude bin do not deviate from a linear behavior. We estimated the masses corresponding to these magnitudes using the BT-Settl and PARSEC-COLIBRI 7 Myr isochrones. In Table \ref{tab:catalogs} we summarize these values, where we can see how the optical catalogs complement each other as well as the NIR catalogs. Therefore, in the LF and system IMF of 25 Ori, for the sources more massive than the DECam completeness mass (0.012 $M_{Jup}$), it will not be necessary any correction due to the photometric sensitivity of the catalogs.
+
+%We analyzed the continuity of the logarithmic number of sources as a function of magnitude in the optical and NIR combined catalog (see Section \ref{sec:merged_cat}) in the brightness range where the data is complete (from $I_c=5.1$ from $Hipparcos$ catalog to $I_c=22.25$ from the DECam observations). There is a linear behavior in the whole $I_c$ range, except for the faint range of the CDSO catalog (between $I_c\approx$17 and 21) where there is an excess of detections. This excess is consistent with sources having a close detection in the DECam images which may contaminate the photometry.
+
+%\textcolor{blue}{I don't understand the previous paragraph.
+%Additionally, note that you describe what you did but it
+%is not clear what your goal is. I mean, what are the biases 
+%introduced by the photometric sensitivity and how they 
+%could affect the determination of the IMF?.}
+
+%\subsection{Photometric Uncertainties}
+%\label{sec:photuncert}
+%
+%The photometric uncertainties of our joined optical and NIR catalog are shown in Figure \ref{fig:errors}. In section \ref{sec:merged_cat} we explained the magnitude ranges where each catalog was used. The behavior of these uncertainties were considered to define the PMS locus, as explained in Section \ref{sec:candidates}.
+%
+%\textcolor{blue}{Figure 3 has not dots. Again we should
+%explain why the photometric uncertainties are being 
+%considered as a bias and how we corrected them. From my
+%point of view the photometric sensitivity and uncertainty
+%are the same thing and both can be discussed in the same sub-section.}
+%
+%\begin{figure}
+%	%\epsscale{2.50}
+%	%\plottwo{errors_I}{errors_J}
+%	\includegraphics[width=0.48\textwidth]{errors_mix}
+%	\caption{Photometric uncertainties as a function of magnitude for the merged optical (top) and NIR (bottom) catalogs. The labeled names indicate the catalogs used in each magnitude range indicated by the dashed lines (see Section \ref{sec:cutoffs}). The few $Hipparcos$ sources in the optical catalog are indicated by the asterisks.}
+%	\label{fig:errors}
+%\end{figure}
+
+%\subsection{Completeness not due to sensitivity}
+%\label{complet}
+
+%\subsection{Interstellar Extinction}
+%\label{sec:extinction}
+%
+%In previous spectroscopic studies there are reported extinctions for the 16\% of our member candidate sample \citep[][and Brice\~no \textit{et al.} 2018 in preparation]{Briceno2005,Downes2014,Downes2015,Suarez2017}. Using the cumulative distribution of these known extinctions we assigned 
+
+% Therefore, we estimated the extinction for the member candidates without a reported value considering the cumulative distribution of the extinctions of the already confirmed members.
+
+\subsubsection{Contamination by Field Stars}
+\label{sec:fieldcontam}
+
+Despite the use of optical-NIR CMDs allow a clear selection of young sources, a contamination of $\sim20\%$ for the low-mass domain \citep{Downes2014} and $\sim30\%$ for the very low-mass and BD regime \citep{Downes2015} is expected in our sample of photometric member candidates. Furthermore, a higher degree of contamination is expected in the intermediate-mass range of our candidate sample due to giant and subgiant star branches crossing the PMS locus (see Figure \ref{fig:CMD}).
+
+We estimated the number of field stars inside the PMS locus following two procedures: First, by means of a simulation of the expected galactic stellar population using the Besan\c{c}on Galactic model \citep[hereafter BGM; ][]{Robin2003}. Second, empirically, by a fiducial selection of photometric candidates from an observed control field with similar galactic latitude.
+
+For the BGM approach we performed four simulations\footnote{\url{http://model2016.obs-besancon.fr}} in an area of 2x2 deg$^2$ around 25 Ori and considering the photometric uncertainties of our joined optical and NIR catalogs shown in Figure \ref{fig:errors} and listed in Table \ref{tab:errors}. The simulated populations combined the optical and NIR photometric errors from UCAC4 and 2MASS (simulation 1), CDSO and 2MASS (simulation 2), CDSO and VISTA (simulation 3), and DECam and VISTA (simulation 4). Then, we joined the resulting simulations by keeping the sources brighter than $I_c=13$ from simulation 1, the sources in the range $13 \le I_c<15$ from simulation 2, the sources with magnitudes $15 \le I_c<17$ from simulation 3, and sources with $I_c \ge 17$ from simulation 4. This way we have a simulated stellar population compatible with our observational joined optical-NIR catalog.
+%\textcolor{blue}{Here you describe precisely how you considered the photometric uncertainties but you didn't explain how you define the remaining parameters the Besan\c{c}on model needs such as distance, steps, extinction etc ... all these quantities need to be included in the text in order to make the process reproducible for the reader.}
+
+\begin{figure}
+	\includegraphics[width=0.48\textwidth]{errors_mix}
+	\caption{Photometric uncertainties as a function of magnitude for the merged optical (top) and NIR (bottom) catalogs. The labeled names indicate the catalogs used in each magnitude range indicated by the dashed lines. The few $Hipparcos$ sources in the optical catalog are indicated by the asterisks.}
+	\label{fig:errors}
+\end{figure}
+
+We also estimated the field star contamination in our candidate sample by counting the stars detected in the following control fields: $i)$ For the optical CDSO, UCAC4 and $Hipparcos$, and NIR 2MASS catalogs, we considered a control field of $1.0^\circ$ radius FOV placed at the same galactic latitude of 25 Ori in a direction moving away from the Orion's Belt ($\alpha_{J2000}= 05^{\rm h} 19^{\rm m} 03^{\rm s}.6$ and $\delta_{J2000} = +04^{\circ} 18' 17''.1$). $ii)$ Since we do not have neither DECam nor VISTA specific observations in this region, we used for these catalogs the areas of the eight north-westernmost and westernmost detectors of the DECam array because they mostly lie outside the larger estimated area of 25 Ori, have the lesser number of Orion OB1a reported members \citep{Briceno2018,Kounkel2018} and the density of LMS and BD candidates in this region falls to about 10\% the density in the 25 Ori core \citep{Downes2014}. Then, we joined all the photometries from both control fields in the same way than the 25 Ori observations.
+%\textcolor{blue}{I find this justification very clear. I suggest to improve it given some quantities such as the mean number density of candidates in this detector against the mean number density of candidates in the core of 25 Ori}.
+
+We applied our procedure for selecting photometric member candidates to the BGM and control field samples in order to account the sources lying inside the PMS locus, which we defined as contaminants. In Table \ref{tab:candidates} we list the number of member candidates and contaminants after applying the spatial coverage corrections for the DECam FOV as well as their complete brightness and mass ranges. We estimated that the fraction of contaminants present in our candidate sample in the $I_c$ brightness range between 13 and 20 mag is about 30\%, which is somewhat higher than the 20\% estimated, and spectroscopically proven, by \citet{Downes2014} in the same brightness range for their candidate selection using similar CMDs.
+
+As mentioned in Section \ref{sec:candidates} and shown in Figure \ref{fig:CMD}, our candidate selection is highly contaminated by giant and subgiant stars in the $I_c$ range between $\sim$9 and $\sim$13 mag. Even, the contaminants estimated by the control field or the BGM can be as numerous as the member candidates in this particular brightness range, which do not allow us to remove the contamination in this range using only the control field or BGM. Fortunately, we can take advantage of Gaia DR2 because in this brightness range all sources have reliable parallaxes. Thus, we did a subset of the member candidates in this peculiar brightness range and having BJ18 distances around the 25 Ori distance and within a dispersion of 1-$\sigma$. Hereafter, we are going to refer to this subset of highly probable 25 Ori members as the distance filtered candidates.
+
+Despite the BGM contaminants are as faint as the contaminants in the control field (see Table \ref{tab:candidates}), there are only three sources from the BGM, classified as dwarf stars, with $I_c$ magnitudes fainter than 19.6 (20.3, 23.5 and 23.9 mag), which corresponds to about one source after applying the spatial correction factor, while we have about 140 contaminants fainter than this magnitude using the control field and after correcting for the spatial coverage. As the BGM does not include extragalactic sources, this difference between the contaminants counted in both samples suggests than most of the contamination present in the faintest range of our candidate sample is due to extragalactic sources.
+
+%\textcolor{blue}{Additional comments to this paragraph: The contamination estimated from 
+%Besan\c{c}on models doesn't include extragalactic sources which can explain in part the 
+%differences between two procedures. I think it should be said and refer the reader to the 
+%next sub-section. Additionally, Table 3 must include the fractional contamination and it 
+%should be compared with the contamination from Downes 2014 which is our "spectroscopic" 
+%reference of sample purity. I think we should think on including the I vs. I-J diagram from
+%both, Besan\c{c}on and control field. The reason for doing that is that it will help us
+%in explaining how the contamination change with magnitude and also serves as a test of
+%the consistency of both procedures.}
+
+%\begin{figure*}
+%\epsscale{1.15}
+%\plottwo{IvsI-J_Besancon}{IvsI-J_ControlField}
+%%\includegraphics[width=80mm]{plot_grafico}
+%\caption{$I_c$ vs $I_c-J$ diagrams for the synthetic stellar population obtained from the Besan\c{c}on model \citep[gray dots on the left panel; ][]{Robin2003} and for the control field sources at the 25 Ori galactic latitude (gray dots on the right panel). The rest of the symbols are the same as in Figure \ref{fig:CMD}.}
+%\label{fig:contamin}
+%\end{figure*}
+
+\begin{table}
+%\centering\small
+\caption{Number, $I_c$ brightness and mass ranges of the member candidates and contaminants in a FOV of 1.1$^\circ$ radius after correcting by the spatial coverage of the DECam data.}
+	\small
+	\label{tab:candidates}
+ 	\begin{tabular}{@{}lccc}
+%	\multicolumn{3}{c}{ \normalsize {Sources Inside the Locus.}}\\
+ 	\hline \vspace{-.05in}
+ 	Origin  	       & Number            & $I_c$ range  & mass range \\ \vspace{-.05in}
+					   & of sources        &              &            \\
+ 	    	   		   & 	        	   & (mag)        & ($M_\odot$)\\
+ 	\hline
+ 	25 Ori FOV         & 1919	  		   & 5.08-25.7    & $<$0.01-13.1   \\
+ 	Control Field FOV  & 1091 	  		   & 6.51-22.6    & 0.012-7.74     \\ 
+ 	BGM                & 840   	  		   & 7.67-23.9$^a$& 0.010$^a$-4.76 \\ 
+ 	\hline
+ 	\end{tabular}
+	$^a$Only three dwarf stars fainter than $I_c>19.6$ (0.021 $M_\odot$).
+\end{table}
+
+%We found a total of $N$ contaminants corresponding to a mean contamination of $\sim N~\rm{\%}$ of the smaple of candidates. Through the predictions from the Besan\c{c}on model we found that de contaminants are foreground field dwarfs and background giants. Different kind of contaminants affects the 25 Ori sample in different mass ranges.
+
+%\begin{figure*}
+%\includegraphics[width=80mm]{plot_grafico}
+%\includegraphics[width=80mm]{plot_grafico}
+%\caption{Distribution of distances for the contaminants.}
+%\label{besancon}
+%\end{figure*}
+
+\subsubsection{Contamination by Extragalactic Sources}
+\label{sec:extgalcontam}
+
+% CCD
+As 25 Ori is out of the galactic plane ($b=18.4^\circ$) and has a minimum extinction of 0.29$\pm$0.26 mag, we expect extragalactic sources in any deep photometric sample. We found in the previous section that the contamination by extragalactic sources dominates the contamination in the faintest range of our member candidate sample. To remove the most likely extragalactic sources from this sample we used the $J-K$ vs $Z-J$ color-color diagram (CCD) shown in Figure \ref{fig:CCD}. We plotted a sample of $\approx 500$ spectroscopically confirmed galaxies and quasars in the 25 Ori FOV with $I_c$ between 13.5 and 20.0 mag from \cite{Suarez2017}. Also, we plotted our member candidates and the previously confirmed members of 25 Ori. Similarly than in the CMD, we defined the empirical isochrone traced by the low-mass and BD confirmed members. Then, we defined the sequence centered on this isochrone and containing most than the 90\% of the confirmed members. This sequence clearly separates from the region where lie more than the $80\%$ of the galaxies and quasars. About $2\%$ (20 sources) of the member candidates plotted in this CCD (those having VISTA photometry) lie in the region defined by the galaxy/quasar sample and have an $I_c$ range from 15.2 to 23.0 mag. We considered these 20 sources as contaminants and removed them from our member candidate sample, keeping the rest of the candidates selected in the CMD. The resultant sample has 1783 member candidates.
+
+%In Figure \ref{fig:CCD}, four (less than $\sim$1\%) of the spectroscopically confirmed members lie in the region where most of the galaxies and quasars lie. The four members are classical T-Tauri stars (CTTSs) harboring circumstellar disks \citep{Briceno2007,Suarez2017}. Also, these member are variable star candidates according to the CVSO and/or because present significant differences between the 2MASS and VISTA photometries. These effects could explain the position of these members in the CCD.
+
+In Figure \ref{fig:CCD}, only three (less than $\sim$1\%) of the spectroscopically confirmed members lie in the region where most of the galaxies and quasars lie. Two of these peculiar members are classical T-Tauri stars (CTTSs) harboring circumstellar disks and having an intense H$_\alpha$ emission \citep[41 and 53 \AA; ][]{Suarez2017}, while the other member is a weak T-Tauri star \citep[WTTS][]{Briceno2007}. These three members are highly probable to be variable stars according to the CVSO, which could explain their position in the CCD.
+
+% Control Field
+After we removed from our member candidate sample the potential extragalactic contaminants, we used the control field to statistically remove the extragalactic and galactic contamination from the LF and system IMF of 25 Ori (see Section \ref{sec:LF} and \ref{sec:IMF}).
+
+%Additionally to this removal of potential extragalactic contaminants, the use of the control field in Section \ref{sec:fieldcontam} also help us to statistically remove the extragalactic contamination from our sample.
+%None of the contaminants from the control field lie in same region of the galaxies and quasars in Figure \ref{fig:CCD}.
+%\textcolor{blue}{I Think we should add a paragraph on the comparison of the results from both methods together with the extragalactic contamination.}
+
+\begin{figure*}
+\includegraphics[width=1.0\textwidth]{J-KvsZ-J}
+\caption{CCD used to remove highly probable extragalactic contaminants (black crosses) from our member candidate sample (black dots). The blue asterisks represent a sample of spectroscopically confirmed galaxies and quasars in the direction of 25 Ori \citep{Suarez2017}. The red dashed line separates more than the 80\% of the sample of extragalactic sources from the member candidates. The orange dashed curve shows the empirical isochrone traced by the low-mass and BD confirmed members of 25 Ori by the studies indicated in the the label, which are mostly contain in the PMS locus (orange solid curves). The gray dots are the same as in Figure \ref{fig:CMD}.}
+\label{fig:CCD}
+\end{figure*}
+
+\subsubsection{IR excesses}
+\label{sec:excesses}
+
+%The presence of IR excesses can bias our candidate selection because some members showing strong IR excesses can be left out to the red side of the PMS locus. In our selection using the PMS locus defined in Section \ref{sec:candidates}, there are some sources on the right of the locus at the bright $I_c$ range and a few sources at the faintest magnitudes (see Figure \ref{fig:CMD}). Working with the luminosity type of sources simulated with the BGM (see Section \ref{sec:fieldcontam}), we checked that the bright sources on the red side of the PMS locus lie in the same position than the giant and, even, bright giant stars. For the 7 faint sources lying on the right of the locus we checked into the DECam images and all these sources are affected by the diffraction spikes of bright stars, which explain their red position in the CMD diagram. Therefore, in our selection of member candidates we do not lose 25 Ori members due to the presence of IR excesses.
+
+Possible excesses in the $J$-band, due to disks, can bias the candidate selection because members showing such excesses could lie outside, on the red side, of the PMS locus. Figure \ref{fig:CMD} shows a set of 67 sources lying on the right side of the PMS locus, 60 of them with $I_c<12.7$ mag and the remaining 7 with magnitudes fainter than 17.2. As discussed in Section \ref{sec:candidates}, these faint sources are affected by the diffraction spikes of nearby bright stars in the DECam images. For the bright sources, the simulations performed with the BGM show that their positions are consistent with that for giant stars. Additionally, we checked the distances of these bright sources to compare them with the 25 Ori distance. 97\% of the sources with reliable BJ18 distances have values not consistent with those of the 25 Ori members, of which most of them (88\%) have larger distances, suggesting these are, in fact, giant stars. Only two sources have distances consistent with 25 Ori, but these sources have unexpected photometric uncertainties from the UCAC4 catalog (0.146 and 0.234 mag), which could explain, in part, their location in the CMD. Thus, the sources left out, on the red side, of the PMS locus have affected photometry or most of them are behind the 25 Ori population, indicating that in our photometric selection we do not lose 25 Ori members due to the presence of IR excesses.
+
+%Only one of these sources does not have a reliable BJ18 distance (uncertainties less than 20\%). 98\% of these sources (81 sources) with reliable distances have values not consistent with that of 25 Ori, of which the 88\% have larger distances and the rest has shorter distances. The 2 sources with distances consistent with that of 25 Ori and out of the PMS locus have significant photometric uncertainties from the UCAC4 catalog (0.146 and 0.234), which could explain, in part, their location in the CMD. Hence, with the PMS locus we defined to select photometric member candidates we do not lose 25 Ori members due to the presence of IR excesses. 
+%10 of them have distances lesser than that of 25 Ori and the rest (71) have distances larger than those expected for 25 Ori members.
+
+%\textcolor{blue}{This sentence need particular attention: "Therefore, in our selection of member 
+%candidates we do not lose 25 Ori members due to the presence of IR excesses." It means that 
+%ALL the bright sources at the right of the PMS locus are giants. But you don't know that. What
+%you really do is to check the expected position of giants in the CMD according to the Besan\c{c}on 
+%model, which is not the same. I suggest to look for these stars in the Gaia distances catalog
+%an check that there are at distances larger than those expected for 25 Ori members.}
+
+Additionally, if the magnitudes used to obtain the masses are affected by the IR excesses, the masses can be overestimated. At the age of 25 Ori, only a fraction of $\sim$5\% of the LMSs harbor circumstellar disks \citep{Briceno2005,Briceno2007,Hernandez2007a,Downes2014,Briceno2018}, which produce IR excesses starting at the $WISE\ 3.4\ \mu$m band or longer wavelengths \citep{Suarez2017}. Even for the BDs in 25 Ori, whose have a larger disk fraction of $\sim 30\%$, the IR excesses start beyond the $H$-band \citep{Downes2015}. Therefore, in this study we used the $I_c$ and $J$-band magnitudes which are not expected to be affected by IR excesses. Particularly, we worked with the $I_c$ magnitudes to estimate masses to avoid any overestimation due to IR excesses.
+
+%The presence of IR excesses in most of our member candidates is not expected at the age of 25 Ori \citep{Briceno2005}. Furthermore, the IR excesses for a sample of 35 confirmed member harboring disks in Orion OB1a start at the $WISE 3.4 \mu$m band or longer wavelengths \citep{Suarez2017}. As describe in Section \ref{sec:candidates}, we are using the $I_c$- and $J$-bands to select the photometric member candidates. Therefore, we expect 
+%
+%We explore the presence of IR excesses for the member candidates having the biggest $I_c-J$ colors although the presence of such optically thick disks is not expected in most of stars and BDs at the age of 25 Ori. We performed the spectral energy distributions (SEDs) of these candidates through the Virtual Observatory SED Analyzer (VOSA) from \citet{Bayo2008} fitting the derredened SEDs to atmospheric models and comparing the fit to the observed SEDs in order to detect possible IR excesses in the $J$-band.
+%
+%\subsubsection{Sources Lying on the Right Side of the PMS Locus}
+%\label{sec:redsources}
+%There are 105 faint sources from the DECam and VISTA data lying out, on the red side, of the PMS locus. We checked these sources into the DECam images and found that $\sim90\%$ of them are affected by the diffraction spikes of bright stars. We worked more in detail with the sources in Section \ref{sec:extgalcontam}).
+%
+%In our case we are estimating the effective temperatures from the I-J color. Then, we explored the presence of excesses in the J-band in each of the photometric candidates although the presence of such optically thick discs is not expected in most of stars and brown dwarfs at the age of 25 Ori.
+
+%The Table \ref{models} summarizes the atmospheric models used for different stellar mass ranges and the Figure \ref{seds} shows a set of exaples of the SEDs we obtained. Only a number of $X$ from the total of $N$ photometric candidates show excesses in the J-band.
+
+%\begin{figure}
+%	\includegraphics[width=80mm]{plot_grafico}
+%	\caption{Examples of the observed SEDs (black dots and lines) and its comparison with the atmospheric models (gray lines).}
+%	\label{seds}
+%\end{figure}
+
+%\subsection{Effects of the rotation}\label{rotation}
+%{\bf NO REVISADO}
+%
+%Figure~\ref{hr} shows the evolutionary tracks from the \citet{Ekstrom2012} models which consider rotation. The general behavior of luminosity an temperature in a rotating star is ... (ask Kevin about that)
+%
+\subsubsection{Effects of Chromospheric Activity}
+\label{sec:activity}
+
+Active LMSs suppress the effective temperature by $\sim5\%$ and inflate the radius by $\sim10\%$ with respect to inactive objects \citep[e.g. ][]{Lopez-Morales2007}. These effects roughly cancel themselves, which preserves the bolometric luminosity \citep{Stassun2012}. 
+
+Due to the effective temperature suppression, the masses of active LMSs estimated from the HR diagram are underestimated, but if masses are estimated from luminosities (or absolute magnitudes), the effect would be much smaller \citep{Jeffries2017}. According to \citet{Stassun2012}, when the effective temperature is used to estimate masses from model isochrones, the resultant masses are systematically lower than the true masses by factors of $\sim3$ and $\sim2$ for LMSs and BDs with intense chromospheric activity of log($L_{H_\alpha}/L_{bol})=-3.3$, respectively. This level of chromospheric activity corresponds to the saturation limit in young LMSs, which separates the CTTSs from WTTSs \citep{BarradoYNavascues-Martin2003}. For LMSs and BDs with low levels of magnetic activity (log($L_{H_\alpha}/L_{bol})=-4.5$), the masses estimated using the effective temperature are systematically lower than true values by factors of $\sim2$ and $\sim1.5$, respectively. Instead, when masses are estimated using the bolometric luminosity derived from the $K$-band absolute magnitudes and considering model isochrones, the resulting masses are $\sim5\%$ smaller than true values for LMSs and BDs with high chromospheric activity and roughly unaffected for LMSs and BDs with low chromospheric activity.
+%, which is due to the temperature dependence of the bolometric correction.
+
+In our case, as explained in Section \ref{sec:mass-luminosity}, we obtained the masses of the member candidates using absolute magnitudes and model isochrones, which minimize the bias in the mass determination of active stars. Additionally, the fraction of active stars in 25 Ori is $\sim 5\%$ \citep[][]{Briceno2005,Briceno2007,Hernandez2007a,Downes2014,Briceno2018}. Considering the expected $\sim$5\% underestimation of masses for the expected $\sim$5\% of active stars in our candidate sample, we estimated that the change in the system IMF of 25 Ori is lesser than the Poisson noise of the distribution.
+
+%These effects lead to younger ages and lower masses by a factor of $\sim2$ for LMSs with high levels of chromospheric activity and to smaller changes for higher masses \citep{Jeffries2017}. However, the bolometric luminosity roughly preserves due to the fact that effective temperature suppresion and the radius inflation effects almost cancel \citep{Stassun2012}. Thus, when masses are estimated from the bolometric luminosity, the effect of underestimate the
+%
+%A number of recent studies have demonstrated that chromospheric activity in LMSs can alter their physical properties relative to the expectations of non-magnetic stellar models. In particular, strong activity appears to be able to inflate the stellar radius and to decrease the effective temperature (e.g., L\'opez-Morales 2007; Morales et al. 2008). Typical amounts of radius inflation and effective temperature suppression are $\sim$10\% and $\sim$5\%, respectively (López-Morales 2007).
+%
+%Stassun et al. (2012) developed empirical relations for the radius inflation and effective temperature suppression for a given amount of chromospheric Hα luminosity. These relations predict that the effective temperature suppression and radius inflation roughly preserve the bolometric luminosity.
+
+% Stassun et al. (2012)
+% radius inflation and temperature suppres- sion mechanism operates in such a way that the temperature suppression and radius inflation almost exactly cancel in terms of their effect on the bolometric luminosity
+% When the distance of a low-mass main-sequence star is known, mass can be estimated from its luminosity either via empiri- cal mass–magnitude relations or model mass–Lbol relations, cir- cumventing the need to useTeff.
+
+
+%Activity effects also lead to errors in object masses (M) when these are derived from Teff.
+
+%The chromospheric activity could produce ... \citet{Stassun2012}
+
+%The levels of chromospheric activity in the sample of photometric candidates was estimated as follows:
+
+\subsubsection{Spatial Resolution and Binaries}
+
+The mass distribution we reported here is the system IMF and does not take into account unresolved binaries or multiple systems. This allow us to directly compare it with all the system IMFs in Table \ref{tab:imf_literature}, assuming that the binarity properties are similar for these populations and a similar spatial resolutions of the data used in the different studies. 
+%\textcolor{blue}{Be sure that we consider that in the conclusions and analysis.}
+
+A revision and treatment of the effect of unresolved binary systems in the IMF parameterization is found in \citet{Muzic2017}. They found that the mass distribution becomes steeper in the low-mass and high-mass sides when correcting the system IMF by binary systems to obtain the single-star IMF, but the changes in the slopes agree within the uncertainties. A similar effect on the IMF due to binary systems is reported in \citet{Kroupa2001}.
+%working with different binary frequencies from studies in the ONC
+
+%As mentioned in Section \ref{sec:DECam}, the resolution of our DECam data is $\sim1''$
+
+%\citet{Reiputh2007} reported a binary fraction of 8.8$\pm$1.1 for member of the ONC with separations of 67.5 to 675 UA.
+
+%All the point source detections placed were the young BD locus is expected
+%were visually inspected in the images in order to discard extended extragalactic
+%sources.
+%
+%We simulated the probability that a member of 25 Ori overlaps
+%with other member or a star from the field.
+%
+%We located in the $I$ vs $I-J$ diagram the sources resolved in the DECam data ($\sim1''$ resolution?) which are not resolved in the CDSO photometry ($\sim2.8''$ resolution). When both components fall in the 25 Ori locus, we calculated the probability that a field star falls in the locus to then estimate a fraction of 25 Ori resolved binaries. When the companion falls outside the locus, we estimated the fraction of nearby field sources contaminating the photometry of the member candidate selection.
+
+\subsubsection{Estimation of the Missed Members}
+\label{sec:missed}
+As explained in the previous sections, in our estimation of the system IMF we corrected the possible over-counting of individual stars and/or stellar systems belonging to 25 Ori by considering several sources of contamination in the photometric sample. An additional improvement of our procedure is to estimate possible under-counting of members by estimating the number of 25 Ori individual stars and/or stellar systems that could lie outside the PMS locus defined in the CMD.
+
+We made this estimation through a simulation of the expected distribution of the cluster members in the $I_c$ vs $I_c-J$ diagram and computing the fraction of these that falls outside the PMS locus. The simulation was performed as follows, in which we refer as \emph{synthetic members} to those individual stars and/or stellar systems obtained from a realization of the system IMF:
+
+$(i)$ We made a random realization of the 25 Ori system IMF by drawing masses for 1800 synthetic members from the lognormal distribution with $m_c=0.30$ and $\sigma=0.47$, obtained in Section \ref{sec:parameterizations}. This number of members matches roughly the number for 25 Ori candidates in our survey.
+
+$(ii)$ The $I_c$ and $J$-band absolute magnitudes of each synthetic member were computed by interpolating their masses into the mass-luminosity relation using the BT-Settl and PARSEC-COLIBRI 7 Myr isochrones, as explained in Section \ref{sec:mass-luminosity}.
+
+$(iii)$ The absolute magnitudes were converted into apparent magnitudes by adding the distance moduli and the corresponding extinctions. The distances and extinctions were generated for each synthetic member by creating random realizations considering the inverse of the cumulative distributions of the BJ18 distances and visual extinctions from spectroscopically confirmed members of 25 Ori (see Figure \ref{fig:cum_dist}). Visual extinctions were converted into extinctions in $I_c$ and $J$ bands through the \cite{Rieke-Lebofsky1985} extinction law with $R_V$=3.02.
+%$(iii)$ The absolute magnitudes were converted into apparent magnitudes by adding the distance modulus and subtracting the corresponding extinction. The distance moduli and visual extinctions were randomly generated for each synthetic member by drawing from probability distributions that mimic the distance distributions obtained from Gaia parallaxes (see Section \ref{sec_app:distance}) and the visual extinction distribution obtained from literature on spectroscopically confirmed members (see Section \ref{sec_app:extinction}). Visual extinctions were converted into extinctions in $I_c$ and $J$ bands through the \cite{Rieke-Lebofsky1985} extinction law with $R_v$=3.02.
+
+$(iv)$ We randomly labeled $25\%$ of the synthetic members as photometrically variables in both $I_c$ and $J$ bands. To each of the variables we assigned a variation, $\Delta I_c$, drawn at random from a normal distribution with zero mean and standard deviation, $\sigma _{I_c}$, equal to 0.3. The fraction of variables as well as $\sigma _{I_c}$ were obtained by matching the catalog of member candidates with the the CVSO, which includes stars and BDs with K and M spectral types. 885 candidates ($\sim$50\% of the sample) fainter than $I_c=13$ mag (saturation of the CVSO) have counterpart in the CVSO and we considered as variable the 259 candidates having a probability $>99\%$ of being variables in the $I_c$-band of the CVSO. The $J$-band variation was computed by multiplying the $\Delta I_c$ by the ratio between the amplitude variations in the $I_c$ and $J$-bands from \cite{Scholz2009}. These variations were added to the corresponding absolute magnitudes. \textcolor{red}{to the absolute or apparent magnitudes?}
+
+$(v)$ We assumed no IR excesses in the $J$-band because they are observed at larger wavelengths, as explained in Section \ref{sec:excesses}.
+
+$(vi)$ Finally, we simulated the photometric uncertainties in the $I_c$ and $J$-bands by adding to the corresponding apparent magnitude a random error based on an estimation of the photometric errors present in our data. Such estimations were obtained through the fit we did to the mean errors as a function of the mean magnitudes and a fit of the standard deviation of errors as a function of the mean magnitude. Then, for each source, the final apparent magnitude is computed by extracting a magnitude from a normal distribution which is centered at the mean apparent magnitude resulting from $(v)$ with a standard deviation equal to the corresponding standard deviation of errors. \textcolor{red}{Check again the last phrase becuase I think I should said photometric errors instead of apparent magnitude}.
+%$(vi)$ Finally, we simulated the photometric uncertainties in the $I_c$ and $J$-bands by adding to each apparent magnitude a random error considering the standard deviation of the mean errors of our observations as a function of the magnitude. Then, for each source, the final apparent magnitude is computed by extracting a magnitude from a normal distribution which is centered at the mean apparent magnitude resulting from $(v)$ with a standard deviation equal to the corresponding standard deviation of errors.
+
+Iterating the above process \textcolor{red}{$N$} \textcolor{red}{how many repetitions does the simulator do?} times we generate multiple random realizations of the cluster and obtained  that a mean fraction of $3\%$ of the synthetic members fall outside the PMS locus used for the candidate selection, lying most of them on the left side. This fraction is roughly consistent with the fraction of confirmed members being outside the PMS locus. In Figure \ref{fig:syntheticIvsIJ} we show the result of a characteristic simulation.
+
+Through the variation of the input parameters, we found that the main effects that can move synthetic members outside the PMS locus in the case of 25 Ori is the photometric variability. As expected, the system IMF parameters $m_c$ and $\sigma$ do not affect the number of synthetic members falling outside the PMS locus, so our estimation of the under-counting is not affected by the assumed system IMF.
+
+\begin{figure}
+	\includegraphics[width=80mm]{CMD_simulator.png}
+	\caption{Simulated $I_c$ vs $I_c-J$ diagram for the estimation of the number of members missed by our candidate selection procedure. Dashed lines indicate the PMS locus and solid line the empiric isochrone. The number and fraction in the top of the plot indicate the miss members in both sides of the PMS locus. The colored scale indicates the mass of the synthetic members \textcolor{red}{The solid line is not the empirical isochrone. It looks like the joined isochrone from the models. what mass represents each color?}.}
+	\label{fig:syntheticIvsIJ}
+\end{figure}
+
+\subsection{Resulting Sample of Member Candidates}
+\label{sec:sample}
+The resultant sample selected from the PMS locus in the CMD and after removing potential extragalactic contaminants in the CCD has 1783 photometric member candidates with $I_c$ magnitudes between 5.08 and 25.7 ($<0.10-13.1\ M_\odot$) and covering an area of 1.1$^\circ$ radius around 25 Ori. The completeness of this sample is at $I_c=22.5$ mag ($12\ M_{Jup}$) and includes the brightest sources in 25 Ori. For a statistical removal of the field star and extragalactic contaminants in this sample, when constructing the LF and system IMF in Sections \ref{sec:LF} and \ref{sec:sys-imf}, we used the control field and, as a comparison for the galactic contamination, the BGM. The contamination present in our sample depends of the brightness range but it can be roughly characterized into three ranges. The extragalactic contamination starts to be significant for $I_c$ magnitudes fainter than $\sim$17 mag and for the bright $I_c$ range, between $\sim$9 to 13 mag, there is a high level of contamination by giant and subgiant stars (reason why we did a subset of the sample filtered in distance). In the range between these contaminants, the PMS population is clearly distinguished from the old dwarf stars and the contamination in the sample is less. We estimated, using the control field and/or the BGM, a contamination of $\sim20\%$ in our sample in the range between 13 and 17 mag. Actually, in this brightness range is where most of the 25 Ori members has been spectroscopically confirmed, as show in Figure \ref{fig:CMD}.
+
+With our sample we confirmed the low density in 25 Ori. We obtained a stellar density of 8.7 to 4.9 stars/pc$^3$ for the areas of 0.5 and 1.0$^\circ$ radius, respectively, while the substellar density goes from 1.3 to 0.9 BDs/pc$^3$ for the same areas, considering the 25 Ori distance estimated in this study. This stellar density values are roughly consistent with \citet{Briceno2007,Downes2014,Briceno2018}.
+
+% Comparison of our sample with the one from Downes+ (2014).
+We compared our candidate sample with the candidate selection done by \citet{Downes2014} using a similar procedure and the CDSO and VISTA catalogs. Their sample includes candidates with masses in a smaller range ($0.02\le M/M_\odot\le0.08$) but covering a larger area (about 3x3 deg$^2$ around the 25 Ori overdensity). If we consider the same area as in this study, there are about 800 candidates in their selection. Our sample contains 970 member candidate in the same mass range and includes 91\% of their candidates. More than a half of their candidates not included in our sample and with $I_c>17$ mag (brightness limit from which we used the DECam photometry) lie within the gaps of the DECam array. Thus, where we have full spatial coverage, we recover more than 96\% of the member candidates by \citet{Downes2014} and, additionally, we reported 242 new candidates in the same mass range covered by their study. We estimated that the contamination in our candidate sample, in the $I_c$ brightness range between 13 to 20 mag, is about 30\%, which is somewhat higher than the 20\% estimated and spectroscopically proven by them in their sample. This difference is due, mainly, because our PMS locus is somewhat.
+%, including more stars of the field, but also losing a minimum fraction of expected members.
+
+We estimated that a minumim fraction of members, mainly due to variability, can be lost in the selection using the defined PMS locus. We explained we do not expect to lose members of 25 Ori due to IR excesses and that these excesses occurs beyond the $J$ band. Additionally, we estimated that the possible change in the distribution of masses due to the low fraction of active stars in 25 Ori is minimum.
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Results and Discussion}
+\subsection{Luminosity Function}
+\label{sec:LF}
+
+In order to construct the LF is necessary to have absolute magnitudes. The absolute magnitudes we estimated here correspond to the consideration that the member candidates and contaminants are real members of 25 Ori. Thus, these absolute magnitudes are fiducial, though for those candidates being true 25 Ori member they should be close to the real ones. Despite this consideration, these absolute magnitudes allow us to analyze properties of the candidate sample as a whole, as the LF and the system IMF.
+%In order to construct the LF of 25 Ori it is necessary to obtain the corresponding absolute magnitudes of the member candidates and contaminants if they were placed at the same distance of 25 Ori.
+
+For the member candidate sample we worked with the $I_c$-band photometry from the different catalogs used in this study. Additionally, it is also necessary to estimate distance and extinction values for each member candidate because we do not have these values for the whole sample; 81\% of the sample has reliable BJ18 distances and only 16\% of the candidates (those spectroscopically confirmed as members) have extinctions from previous studies. From a list of 334 spectroscopically confirmed members of 25 Ori \citep{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018}, we constructed the normalized cumulative distributions of their BJ18 distances and reported extinctions. We used the inverse of these observed distributions to create random realizations to assign values of these parameters to each member candidate, even those already having reliable Gaia DR2 parallaxes or extinctions from previous spectroscopic studies, to have a sample with values consistent with those from the 25 Ori members. A detailed explanation of this procedure is found in Section \ref{sec_app:distance_extinction}. With these distances and extinctions, together with the $I_c$ photometry, we computed the corresponding absolute magnitudes, $M_{I_c}$, for all the member candidates. We made $10^4$ repetitions of this experiment in order to obtain a robust simulation, which produced $10^4$ artificial distributions in the $M_{I_c}$ range from -2.8 to 17.8 mag. Additionally, we obtained in a similar way $10^4$ $M_{I_c}$ magnitudes for each candidate in the distance filtered subset. The resultant $M_{I_c}$ range of this subset goes from $\sim 1$ to $\sim 5$ mag, assuming the distance and extinction of 25 Ori, and corresponds to the region mostly affected by giant and subgiant stars.
+
+%For the control field sources lying inside the PMS locus in the CMD, we estimated their $M_{I_c}$ magnitudes in a similar way than for the member candidates. In this case we have XX sources with Gaia DR2 parallaxes ranging distances from XX to XX, and XX sources with reported extinctions in a range from XX to XX. For the sources simulated by the Besan\c{c}on model \citep{Robin2003} and lying inside the PMS locus in the CMD, we computed the $M_{I_c}$ magnitudes using the same cumulative distributions for distances and extinctions than for the member candidates due to the simulations was performed in the 25 Ori field of view (see Section \ref{sec:fieldcontam}).
+
+%\textcolor{blue}{We should explain or simply give a name to this magnitude we are computing for the field stars which, as I explain before, it is not an absolute neither a apparent magnitude. I suggest to include (probably at the beginning of the section)) something like: In order to estimate and correct the contribution of the contamination by field stars in the determination of the LF we considered fiducially these stars as members of 25 Ori by assigning them a distance obtained from the 25 Ori distance distribution and computing the absolute magnitude which corresponds to that distance.}
+
+For the contaminants from the control field and BGM, we estimated their fiducial $M_{I_c}$ magnitudes similarly than for the member candidates. This way we can estimate the contamination in the $M_{I_c}$ distribution of the member candidates to obtain the LF.
+%Thus, we have $10^4$ $M_{I_c}$ magnitudes for each contaminant.
+%We stress that these magnitudes are fiducial because we are assuming they are member of 25 Ori. 
+
+Using the simulation just described, we constructed the $10^4$ $M_{I_c}$ distributions of the member candidates and contaminants. To correct each distribution of the candidates by the spatial coverage factor of DECam, we first made the $M_{I_c}$ distribution of the candidates from this catalog to apply the correction and then we added the distribution of the rest of the data. We constructed in a similar way the $M_{I_c}$ distributions of the contaminants in the control field.
+%Each distribution of the member candidates was made adding the $M_{I_c}$ distribution of the candidates from DECam after applying the spatial coverage factor, which depends on the considered area (see Section \ref{sec:spatial}), and the distribution of the rest of the catalogs, which have full coverage of the DECam FOV. Similarly, we constructed the $M_{I_c}$ distributions of the contaminants in the control field, correcting by the coverage factor the distribution of the contaminant from DECam and VISTA.
+
+With the $10^4$ $M_{I_c}$ distributions of the member candidates and contaminants, we defined the distributions using the median values and assigning uncertainties of 1 $\sigma$. The resultant distribution of the contaminants by the control field and the BGM are consistent within the uncertainties for $M_{I_c}$ magnitudes lesser than $\sim 9$, even where the giant and subgiant stars lie, which indicates that the contamination in our sample in this range is due mainly to stars of the field. For fainter sources starts a significant discrepancy between both samples of contaminants, which increases with the magnitude, suggesting the presence of extragalactic sources. We decided to worked with the contaminants estimated by the control field because also allow us to remove extragalactic sources.
+%Using the simulation just described, we constructed the $10^4$ $M_{I_c}$ distributions of the member candidates. Then, we defined a distribution using the median values and assigning uncertainties of 1 $\sigma$. This distribution was corrected by subtracting the distribution of the contaminants in the control field and adding the errors in quadrature, resulting the LF of 25 Ori. As a comparison, we independently subtracted the $M_{I_c}$ distribution of the contaminants from the BGM instead of from the control field. As expected, both resulting LFs are consistent within the uncertainties inside the range covered by the BGM. We decided to worked with the contaminants estimated by the control field because also allow us to remove extragalactic sources
+
+To the $M_{I_c}$ distribution of the member candidates we subtracted the distribution of the contaminants in the control field adding the errors in quadrature. In the resultant distribution we replaced the $M_{I_c}$ range ($\sim1-5$ mag) containing a high giant and subgiant star contamination by the distribution of the candidates in the distance filtered subset, which results in the LF of 25 Ori.
+
+We constructed LFs for different FOVs starting with a radius of $1.1^\circ$ and decreasing it by steps of $0.1^\circ$ until having a radius of $0.5^\circ$ (the 25 Ori overdensity). In Figure \ref{fig:LF} we show the LFs for the 25 Ori estimated areas. These LFs look similar within the uncertainties.
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{ccc}
+		\subfloat{\includegraphics[width=.33\linewidth]{LF_FOV_0-5deg.pdf}} & 
+		\subfloat{\includegraphics[width=.33\linewidth]{LF_FOV_0-7deg.pdf}} &
+		\subfloat{\includegraphics[width=.33\linewidth]{LF_FOV_1-0deg.pdf}}
+	\end{tabular}
+	\caption{LFs after correcting by the galactic and extragalactic contamination (gray crosses) in our member candidate sample (gray open circles) inside the 25 Ori estimated areas. The panels from left to right correspond to the areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}. The vertical lines, from left to right, indicate the substellar limit (Hydrogen burning limit), the BD-planetary object limit (Deuterium burning limit) and the completeness limit of our DECam observations.
+	\label{fig:LF}}
+\end{figure*}
+
+%\begin{figure*}
+%	\gridline{\fig{LF_FOV_0-5deg.pdf}{0.33\textwidth}{}
+%	          \fig{LF_FOV_0-7deg.pdf}{0.33\textwidth}{}
+%	          \fig{LF_FOV_1-0deg.pdf}{0.33\textwidth}{}
+%	          }
+%	\caption{LFs after correcting by the galactic and extragalactic contamination (gray crosses) in our member candidate sample (gray open circles) inside the 25 Ori estimated areas. The panels from left to right correspond to the areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}. The vertical lines, from left to right, indicate the substellar limit (Hydrogen burning limit), the BD-planetary object limit (Deuterium burning limit) and the completeness limit of our DECam observations.
+%	\label{fig:LF}}
+%\end{figure*}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\subsection{System IMF}
+\label{sec:IMF}
+%The main purpose of this study is to determine the system IMF of 25 Ori. Therefore, we need to estimate the masses for our member candidates, as well as for the expected contaminants.
+The main purpose of this study is to determine the system IMF of 25 Ori. Therefore, we need to estimate the corresponding masses for our member candidates and contaminants under the consideration they are true members of 25 Ori.
+
+\subsubsection{Mass-Luminosity Relationship}
+\label{sec:mass-luminosity}
+
+At the 25 Ori age \citep[7-10 Myr; ][]{Briceno2005,Briceno2007,Downes2014,Briceno2018}, stars with masses between $\sim 2$ and $\sim 15\ M_\odot$ should be already in the MS, while less massive objects are still in the PMS and more massive stars are in post-MS stages \citep[][]{Prialnik2000}. The most massive star in 25 Ori is the star with the same name, classified as a peculiar B1V star with broad lines \citep{Houk1999}, which roughly corresponds to $\sim 10\ M_\odot$ using the \citet{Schmidt-Kaler1982} empirical mass-luminosity relationship. Therefore, we do not expect in our candidate sample members of 25 Ori being in post-MS but we do expect PMS and MS members. We estimated that $\sim8\%$ of our candidates have masses larger than 2 $M_\odot$, considering the system IMF by \citet{Downes2014}.
+%At the 25 Ori age \citep[7-10 Myr; ][]{Briceno2005,Briceno2007}, the members with masses higher than $\sim 2\ M_\odot$ should be already in the MS \citep[][]{Prialnik2000}. The brightest star in 25 Ori is the star with the same name, classified by \citet{Houk1999} as a peculiar B1V star with broad lines, which roughly corresponds to $\sim 10\ M_\odot$ using the \citet{Schmidt-Kaler1982} empirical mass-luminosity relationship. Thus, we expect to have both PMS and MS stars in our member candidate sample. \textcolor{blue}{The second sentence of this paragraph is not connected with the first and third sentences. Please rephrase. Probably starting with the second sentence about the more massive star which is a MS star and then improve the description explaining that more stars are already in the mean sequence. A useful data: $~8\%$ of the stars have masses larger than $2M_\odot$}.
+%τ15 ≈ 12.3Myrs, where τ15 is the duration of the Hydrogen and Helium burning phases for a star with a mass of 15 M⊙ (Ekstrom et al. 2012, A&A, 537, 146)
+
+In order to cover the large $M_{I_c}$ range where our candidate sample has complete photometric sensitivity (from -2.8 to 14.6 mag), we worked with two sets of mass-luminosity relationships for PMS and MS stellar models at the age of 25 Ori. We considered the 7 Myr isochrones from PARSEC-COLIBRI \citep{Marigo2017} for masses higher than $1.0\ M_\odot$ and from BT-Settl \citep{Baraffe2015} for lower masses. These isochrones are obtained assuming solar metallicity. In Figure \ref{fig:mass-L} we show the resulting mass-luminosity relation from high-mass stars to very low-mass objects (from 0.01 to 15 $M_\odot$). We stress the soft transition between both isochrones at the selected cutoff. 
+
+If instead of these 7 Myr isochrones we consider those of 10 Myr (the older quote of the 25 Ori age), the resultant mass-luminosity relations look very similar, only with differences smaller than $\sim 30\%$ in the $M_{I_c}$ range from 9 to 11 mag, as shown in Figure \ref{fig:mass-L}.
+
+A couple of sources in our candidate sample have $M_{I_c}$ magnitudes of 17.0 and 17.8, considering the distance and extinction of 25 Ori, which are fainter than those covered by the mentioned mass-luminosity relation. To estimate the masses of these candidates we used the COND 7 Myr isochrone \citep{Baraffe2003}.
+
+%In order to cover the large $M_{I_c}$ range of our candidate sample (-2.8-17.8 mag), we worked with three sets of mass-luminosity relationships for PMS and MS stellar models at the age of 25 Ori. We considered the 7 Myr isochrones of PARSEC-COLIBRI \citep{Marigo2017} for masses higher than $m=1.0\ M_\odot$ and BT-Settl \cite{Baraffe2015} for lower masses. Additionally, we complemented the lest massive regime with the 7 Myr isochrone of COND \citep{Baraffe2003}, which goes down to 0.5 $M_{Jup}$\footnote{These set of isochrones are obtained assuming solar metallicity}. In Figure \ref{fig:mass-L} we show the resulting mass-luminosity relation from high-mass stars to planetary mass objects. We stress the soft transition between both isochrones at the selected cutoff.
+% BT-Settl: Z = 0.0153 from Asplund et al. (2009).
+% Z_sun	= 0.019 (Marigo et al. 2008)
+% COND:
+% PARSEC-COLIBRI: Z=0.0152, 
+% Z_sun	= 0.019 (Marigo et al. 2008)
+% Z_sun	= 0.0152 (Bressan et al. 2012)
+%For the intermediate and high-mass regime we worked with the 7 Myr isochrone of PARSEC-COLIBRI \citep{Marigo2017}, which covers a mass range from 0.09 up to $\sim 24\ M_\odot$. For the low-mass stars and BD domain we used the 7 Myr isochrone of BT-Settl \citep{Baraffe2015}, which has a mass range from 1.4 down to 0.01 $M_\odot$. For the least massive objects, in the BD-planetary object limit, we worked with the 7 My isochrone of COND \citep{Baraffe2003}, which covers a mass range from 0.5 $M_{Jup}$ to 0.10 $M_\odot$.
+
+%\textcolor{blue}{Also I think it is important to stress that we have candidates fainter than the less massive BDs predicted by the models.}
+%\textcolor{blue}{At the beginning of the paper you say that Pe\~na-Ram\'irez obtain an IMF even for BD with masses lower than 0.01 Mo. Where this M-L came from? Could we include that here? If not, why not?}
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{mass-MIc}
+	\caption{Mass-luminosity relation used to estimate the masses of the candidates and contaminants (red solid curve). This relation is a combination of the 7 Myr isochrones of BT-Settl and PARSEC-COLIBRI, which are indicated by the dashed curve and the dotted curve, respectively. The mass-luminosity relation considering instead the 10 Myr isochrones is represented by the gray solid curve, which is mostly contained into the thickness of the mass-luminosity relation for 7 Myr.}
+	\label{fig:mass-L}
+\end{figure}
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\subsubsection{System IMF}
+\label{sec:sys-imf}
+
+%By interpolation of the $M_{I_c}$ magnitudes into the COND 7 Myr isochrone we obtained masses of 3 and 4 $M_{Jup}$ for the two faintest candidates in our sample. 
+
+%For the rest of the candidate sample and for the contaminants, we estimated their corresponding masses, considering they are members of 25 Ori, interpolating their $M_{I_c}$ magnitudes into the mass-luminosity relationship explained in the previous section. This way we obtained $10^4$ masses for each source, resulting in a final mass range covered by the member candidates from $0.01$ to 13.1 $M_\odot$.
+
+By interpolation of the $M_{I_c}$ magnitudes into the mass-luminosity relationship explained in the previous section, we estimated the masses that correspond to each member candidate and contaminant, considering they are members of 25 Ori. This way we obtained $10^4$ masses for each source, resulting in a final mass range covered by the member candidates from $0.01$ to 13.1 $M_\odot$. In Table \ref{tab:candidates} we list this mass range along with those for the samples of contaminants.
+
+For the two faintest candidates in our sample, which have $I_c$ magnitudes of 24.895 and 25.673, we estimated that if they are true members of 25 Ori they should have masses of 3 and 4 $M_{Jup}$, interpolating into the COND 7 Myr isochrone. However, these masses can be somewhat underestimated due to the shortcomings of the COND isochrones predicting fluxes at the $I$-bandpass \citep{Baraffe2003}. 
+
+%Working \textcolor{blue}{Better: "By interpolation of the absolute I-band magnitudes into the mass-luminosity relationship explained in the previous sections ..."} with the resultant mass-luminosity relation combining the BT-Settl and PARSEC-COLIBRI 7 Myr isochrones, we estimated the masses of our member candidates and highly probable 25 Ori members as well as for the contaminants selected in the control field and with the Besan\c{c}on simulations \textcolor{blue}{Again, be careful with this, you are not computing the masses of the contaminants: Say something like: "as well as the mass that corresponds to each contaminant if we assume them as members of 25Ori. We made this computation for contaminants selected in the control field and from the Besan\c{c}on simulations". Note that this summarizes also the explanation in the next paragraph.}. 
+
+With these masses we constructed the mass distributions of the member candidates and contaminants. Similarly than for the $M_{I_c}$ distributions, we corrected the distributions by the spatial completeness of DECam and then we defined the mass distribution using the median values and assigning errors of 1 $\sigma$. From the mass distribution of the member candidates we subtracted that of the control field contaminants adding the errors in quadrature. Then, we replaced in the resulting distribution, to refine the removal of giant and subgiant star contamination, the range between $\sim$0.9 and 3 $M_\odot$ by the mass distribution of the candidates in the distance filtered subset. The resultant distribution corresponds to the system IMF of 25 Ori, which is complete from 12 $M_{Jup}$ to 13.1 $M_\odot$ (corresponding to the 25 Ori star).
+
+In Figure \ref{fig:imf} we show the system IMF for the different areas estimated for 25 Ori. We can see that the second least massive bin (at log$m=-1.9$) is partially affected by the completeness of our DECam data. We corrected the count of this bin by a factor of $\sim1.5$, resulting from the ratio between the number of expected sources and those observed in DECam. The factor to correct the least massive bin, which includes planetary-mass objects, is $\sim 50$, but as this bin is completely out of our photometric sensitivies, we did not correct it. However, considering this correction factor and that these two candidates are members of 25 Ori, we roughly expect 100 free-floating planets (substellar objects with $m\lesssim10\ M_{Jup}$) in 25 Ori.
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{ccc}
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-5deg.pdf}} & 
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-7deg.pdf}} &
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_1-0deg.pdf}} 
+	\end{tabular}
+	\caption{System IMFs of 25 Ori after correcting by the galactic and extragalactic contamination (gray crosses) in our member candidate sample (gray open circles). The panels, from left to right, correspond to the 25 Ori areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}. The vertical lines are the same as in Figure \ref{fig:LF}. The size of the bin is 0.2 dex.
+	\label{fig:imf}}
+\end{figure*}
+
+%\begin{figure*}
+%	\gridline{\fig{IMF_FOV_0-5deg.pdf}{0.33\textwidth}{}
+%	          \fig{IMF_FOV_0-7deg.pdf}{0.33\textwidth}{}
+%	          \fig{IMF_FOV_1-0deg.pdf}{0.33\textwidth}{}
+%	          }
+%	\caption{System IMFs of 25 Ori after correcting by the galactic and extragalactic contamination (gray crosses) in our member candidate sample (gray open circles). The panels, from left to right, correspond to the 25 Ori areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}. The vertical lines are the same as in Figure \ref{fig:LF}. The size of the bin is 0.2 dex.
+%	\label{fig:imf}}
+%\end{figure*}
+
+%\textcolor{blue}{I understood that you already corrected the LF by contamination. So we have two possible procedures: (i) to convert the LF into the IMF (which is what mos people do) and(ii) compute the mass for each star from its absolute magnitude. Are both procedures equivalent? We should show and discuss that. This is important because we are defining a procedure and this is a key point. We should compare both IMFs.}
+% Moraux et al. 2007 converted the magnitude bin to a mass bin
+
+%++++++++++++++++++++++++++++++++++++++++++++
+\subsubsection{Parameterizations}
+\label{sec:parameterizations}
+
+We described the derived system IMF of 25 Ori using the following parameterizations:
+
+$i)$ A triple power-law distribution in the form:
+
+\begin{equation}
+	\xi(\log m)\propto m^{-\Gamma_i}
+\end{equation}
+
+with $\Gamma_1$, $\Gamma_2$ and $\Gamma_3$ for the mass ranges $m<0.30\ M_\odot$, $0.30<m/M_\odot<1$ and $m>1\ M_\odot$, respectively.
+
+$ii)$ A lognormal distribution for masses $M<1M_\odot$:
+
+\begin{equation}
+\xi(\log m)\propto e^{-\frac{(\log m-\log m_c)^2}{2\sigma^2}}
+\end{equation}
+
+where $m_c$ is the characteristic mass and $\sigma$ the standard deviation.
+
+$iii)$ A tapered power-law function for the mass range where the data are complete ($0.012-13.1\ M_\odot$):
+
+\begin{equation}
+\xi(\log m)\propto m^{-\Gamma} \Big[1-e^{-(m/m_p)^\beta}\Big]
+\end{equation}
+
+where $m_p$ is the peak mass, $\Gamma$ the power law index and $\beta$ the tapering exponent. This function has a power law behavior for high masses and an exponential truncation for lower masses.
+
+In these fits we avoided the most massive bin(s) with counts lesser than the unity, because they are at the noise level, and the least massive bin centered at log$m$=-2.1, because it is affected by the completeness of our DECam photometry. The reason why we have counts lesser than one is because to the member candidate mass distribution we subtracted the mass distribution of the contaminants after applying the correction by the spatial coverage, which can result in a fractional number.
+
+In Figure \ref{fig:imf_par} we show these functions fitted to the 25 Ori system IMF and in Table \ref{tab:imf} we summarize the parameters with their uncertainties.
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{ccccccccc}
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-5deg_spl.pdf}} & 
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-7deg_spl.pdf}} &
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_1-0deg_spl.pdf}} & \\
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-5deg_lognormal.pdf}} & 
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-7deg_lognormal.pdf}} &
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_1-0deg_lognormal.pdf}} & \\
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-5deg_tpl.pdf}} & 
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_0-7deg_tpl.pdf}} &
+		\subfloat{\includegraphics[width=.33\linewidth]{IMF_FOV_1-0deg_tpl.pdf}} 
+	\end{tabular}
+	\caption{Parameterizations fitted to the 25 Ori system IMFs. Left, central and right panels are the system IMFs considering the areas by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}, respectively. Top, middle and bottom panels show the triple power-law, lognormal and tapered power-law functions, respectively, fitted to the system IMFs. As a reference, the gray line shows the \citet{Salpeter1955} slope ($\Gamma=1.35$). The rest of the symbols and lines are the same as in Figure \ref{fig:imf}.
+	\label{fig:imf_par}}
+\end{figure*}
+
+\begin{table*}
+\caption{Parameterizations fitted to the 25 Ori system IMF.}
+  \small
+  \label{tab:imf}
+  \begin{threeparttable}
+ 	\begin{tabular}{ccccccccc}
+ 	%\begin{tabular}{p{0.8cm}p{0.3cm}p{0.5cm}p{0.4cm}p{0.4cm}p{0.4cm}p{0.4cm}p{0.1cm}}
+ 	\hline
+		Area           & \multicolumn{2}{c}{Lognormal} & \multicolumn{3}{c}{Triple Power Law}           & \multicolumn{3}{c}{Tapper Power Law} \\
+        radius	    & $m_c$        & $\sigma$       & $\Gamma_1$ ($m\le0.3\ M_\odot$) & $\Gamma_2$ ($0.3<m/M_\odot<1.0$)  & $\Gamma_3$ ($m\ge1.0\ M_\odot$)  & $\Gamma$      & $m_p$         & $\beta$      \\
+        ($^\circ$)  & $(M_\odot)$  &                &                               &                &               &               & $(M_\odot)$   &             \\
+ 	\hline
+		0.5$^a$       & 0.30$\pm$0.04 & 0.47$\pm$0.07 & -0.73$\pm$0.12 & 0.87$\pm$0.05 & 1.29$\pm$0.10 & 1.12$\pm$0.24 & 0.32$\pm$0.07 & 2.10$\pm$0.19 \\
+		0.7$^b$       & 0.31$\pm$0.04 & 0.47$\pm$0.06 & -0.72$\pm$0.08 & 0.91$\pm$0.10 & 1.48$\pm$0.18 & 1.10$\pm$0.10 & 0.31$\pm$0.05 & 2.06$\pm$0.14 \\
+		1.0$^c$       & 0.26$\pm$0.02 & 0.44$\pm$0.04 & -0.69$\pm$0.05 & 0.89$\pm$0.07 & 1.59$\pm$0.18 & 1.23$\pm$0.14 & 0.33$\pm$0.07 & 2.04$\pm$0.16 \\
+		%0.5$^a$       & 0.30$\pm$0.04 & 0.47$\pm$0.07 & -0.73$\pm$0.12 & 0.87$\pm$0.05 & 1.29$\pm$0.10 & 1.41$\pm$0.21 & 0.40$\pm$0.09 & 2.26$\pm$0.20 \\
+		%0.7$^b$       & 0.31$\pm$0.04 & 0.47$\pm$0.06 & -0.72$\pm$0.08 & 0.91$\pm$0.10 & 1.48$\pm$0.18 & 1.45$\pm$0.15 & 0.41$\pm$0.06 & 2.26$\pm$0.15 \\
+		%1.0$^c$       & 0.26$\pm$0.02 & 0.44$\pm$0.04 & -0.69$\pm$0.05 & 0.89$\pm$0.07 & 1.59$\pm$0.18 & 1.35$\pm$0.14 & 0.38$\pm$0.07 & 2.07$\pm$0.16 \\
+ 	\hline
+ 	\end{tabular}
+  \begin{tablenotes}[para,flushleft]
+	$^a$By \citet{Downes2014}.\\
+	$^b$By \citet{Briceno2005,Briceno2007}.\\
+	$^c$By \citet{Briceno2018}.
+  \end{tablenotes}
+ \end{threeparttable}
+\end{table*}
+
+%\begin{deluxetable*}{ccccccccc}
+%\tabletypesize{\small}
+%\tablewidth{0pt} 
+%\tablecaption{Parameterizations fitted to the 25 Ori system IMF. \label{tab:imf}}
+%\tablehead{
+%		Area           & \multicolumn{2}{c}{Lognormal} & \multicolumn{3}{c}{Triple Power Law}           & \multicolumn{3}{c}{Tapper Power Law} \\
+%		\cmidrule(lr){2-3}
+%		\cmidrule(lr){4-6}
+%		\cmidrule(lr){7-9}
+%        radius	    & $m_c$        & $\sigma$       & $\Gamma_1$ ($m\le0.3\ M_\odot$) & $\Gamma_2$ ($0.3<m/M_\odot<1.0$)  & $\Gamma_3$ ($m\ge1.0\ M_\odot$)  & $\Gamma$      & $m_p$         & $\beta$      \\
+%        ($^\circ$)  & $(M_\odot)$  &                &                               &                &               &               & $(M_\odot)$   &             
+%	} 
+%	\startdata 
+%		0.5$^a$       & 0.30$\pm$0.04 & 0.47$\pm$0.07 & -0.73$\pm$0.12 & 0.87$\pm$0.05 & 1.29$\pm$0.10 & 1.12$\pm$0.24 & 0.32$\pm$0.07 & 2.10$\pm$0.19 \\
+%		0.7$^b$       & 0.31$\pm$0.04 & 0.47$\pm$0.06 & -0.72$\pm$0.08 & 0.91$\pm$0.10 & 1.48$\pm$0.18 & 1.10$\pm$0.10 & 0.31$\pm$0.05 & 2.06$\pm$0.14 \\
+%		1.0$^c$       & 0.26$\pm$0.02 & 0.44$\pm$0.04 & -0.69$\pm$0.05 & 0.89$\pm$0.07 & 1.59$\pm$0.18 & 1.23$\pm$0.14 & 0.33$\pm$0.07 & 2.04$\pm$0.16 \\
+%		%0.5$^a$       & 0.30$\pm$0.04 & 0.47$\pm$0.07 & -0.73$\pm$0.12 & 0.87$\pm$0.05 & 1.29$\pm$0.10 & 1.41$\pm$0.21 & 0.40$\pm$0.09 & 2.26$\pm$0.20 \\
+%		%0.7$^b$       & 0.31$\pm$0.04 & 0.47$\pm$0.06 & -0.72$\pm$0.08 & 0.91$\pm$0.10 & 1.48$\pm$0.18 & 1.45$\pm$0.15 & 0.41$\pm$0.06 & 2.26$\pm$0.15 \\
+%		%1.0$^c$       & 0.26$\pm$0.02 & 0.44$\pm$0.04 & -0.69$\pm$0.05 & 0.89$\pm$0.07 & 1.59$\pm$0.18 & 1.35$\pm$0.14 & 0.38$\pm$0.07 & 2.07$\pm$0.16 \\
+%	\enddata
+%	\tablenotetext{a}{By \citet{Downes2014}.}
+%	\tablenotetext{b}{By \citet{Briceno2005,Briceno2007}.}
+%	\tablenotetext{c}{By \citet{Briceno2018}.}
+%\end{deluxetable*}
+
+%++++++++++++++++++++++++++++++++++++++++++++
+\subsubsection{Comparison of the 25 Ori system IMF with Other Studies}
+\label{sec:imf_comparison}
+Before comparing the system IMF reported here with that in other clusters, we considered the 25 Ori system IMF obtained by \citet{Downes2014}. As mentioned in Section \ref{sec:introduction}, they fitted a lognormal and a dual power-law function to the range $0.02\lesssim M/M_\odot\lesssim 0.8$ and with a break mass at 0.08 $M_\odot$, for two different areas (3x3 deg$^2$ and 0.5$^\circ$ radius around the overdensity). Their values for the $m_c$ and $\sigma$ parameters are slightly lower than ours, regardless the considered area, and their slope for substellar masses is quite steeper. Precisely, they reported that 25 Ori may have a lower number of BDs when comparing with \citet{Chabrier2003b}. We stress that they worked with the CDSO catalog, which is also part of this study. Despite the CDSO catalog is complete at $\sim0.2\ M_\odot$\footnote{$0.3\ M_\odot$ considering the \citet{Baraffe1998} models.}, they dealt with incompleteness issues related to the width of their locus and the dispersion of the candidates for masses $m<0.06\ M_\odot$. Thus, most of the mass range where they fitted the substellar slope presents this issue. Additionally, we observed in the DECam images (0.9'' spatial resolution) that an important fraction ($\sim15\%$) of the faint detections ($I_c\gtrsim17$) in the entire CDSO catalog (2.9'' spatial resolution) are unresolved sources. This yields a lost of sources in the CDSO catalog and, hence, in the candidate selection. Therefore, we mainly attribute the differences between both system IMFs to these lost unresolved sources and to the treatment of the mentioned incompleteness as well as to the differences in the precedures for estimating masses (they worked with the HR diagram and us with the mass-luminosity relation in Section \ref{sec:mass-luminosity}). In this study, we used our deeper DECam photometry, instead of that from the CDSO, for masses $m>0.08\ M_\odot$. Hence, we presented here an updated version of the 25 Ori system IMF.
+% Additional discussion about both candidate samples in these studies is presented in Section \ref{sec:sample}.
+% and, as mentioned in Section \ref{sec:missed}, the expected fraction of missed member in our PMS locus definition is negligible. 
+
+In order to contribute to the understanding of the origin of the IMF and its relation with the environment, we compared the 25 Ori system IMF with those in Table \ref{tab:imf_literature}, mainly becuase they cover a wide mass range as the presented here, and with other studies of interest. In these comparisons we assumed similar binarity properties for the different clusters and similar spatial resolution of the surveys.
+
+The $m_c$ and $\sigma$ values of the best fitted lognormal function to the 25 Ori system IMF are roughly consistent, within the uncertainties, with those obtained in the clusters mentioned in Table \ref{tab:imf_literature}. The values of $m_c$ goes from 0.25 to 0.36, with the most dispersed values in the oldest associations. $\sigma$ takes values between 0.38 and 0.53, considering only those obtained for masses $<$1 $M_\odot$. Also, these values are consistent with a set of young clusters in \citet{Bayo2011}. Despite we compared the best fitted lognormal function, we stress that this functional form tends to underestimate the the number of BDs. A similar result was reported in $\sigma$ Ori by \citet{PenaRamirez2012}.
+
+The slope we found for the high-intermediate masses is consistent with the \citet{Salpeter1955} slope ($\Gamma=1.35$) and with the most representative slope for $m>1\ M_\odot$ from a large sample of stellar associations in \citet{Bastian2010}. These associations have a diversity of physical conditions such as age, metallicity and total mass. From several clusters in Table \ref{tab:imf_literature} we can see a slighly flatter slope than that in the cited works, including ours, but it is worth to stress the different break masses. In most of the studies in this table the slope fitted to the high-intermediate-mass range goes down to peak of the IMFs. In the case of 25 Ori, the behaviour of the system IMF in this mass range is better described by a dual power-law (see Figure \ref{fig:imf}). However, if we consider the break mass for high-intermediate masses at $\sim0.5\ M_\odot$, the slope fitted to the 25 Ori system IMF is somewhat smaller and more consistent with the clusters in the table.
+
+The tapered power-law fitted to our system IMF is consistent with that fitted to an extended sample of young clusters (25 Ori not included) by \citet{DeMarchi2010} and \citet{Bastian2010}. The $m_p$ value is slighly higher in our system IMF but the differences are in agreement within the errors.
+
+These comparisons indicate that the 25 Ori system IMF show a similar behaviour to that in a diversity of stellar clusters, which suggest that the shape of the IMF is almost insensitive to enviromental properties, as predicted by the models from \citet{Bonnell2006} and \citet{Elmegreen2008}.
+
+Also, the continuity of the distribution of masses across the entire range is an indicative of similarities between planetary mass objects to high-mass stars, supporing the idea of a common physical mechanism for the formation of these objects \citep{Reipurth-Clarke2001}.
+
+%In Figure \ref{fig:imf_all} we show the parameterizations fitted to the system IMF of 25 Ori as well as those IMF in other star forming regions.
+
+%\begin{figure*}
+%	\includegraphics[width=1.0\textwidth]{imf_all.pdf}
+%	\caption{Comparison of the parameterizations fitted to the system IMF of 25 Ori with those in previous studies. The gray solid line, the solid curve, the dash-dotted curve and the dashed curve show the \citet{Salpeter1955} slope, the lognormal function from \citet{Chabrier2003b}, the taper power law function from \citet{DeMarchi2010} and the 25 Ori lognormal parameterization from \citet{Downes2014}, respectively. The rest of the symbols are indicated in Figure \ref{fig:imf_par}.}
+%	\label{fig:imf_all}
+%\end{figure*}
+
+\textcolor{blue}{We really need a plot of the IMFs showing these comparisons.}
+
+%++++++++++++++++++++++++++++++++++++++++++++
+%\subsection{Spatial Distribution}
+\subsection{Mass Segregation}
+\label{sec:mass_segregation}
+
+Mass segregation is an interesting phenomenon present in some clusters with different ages \citep[e.g. ][]{Lada-Lada2003}, which opens the question about if it is a primordial property \citep{Bonnell-Davies1998} or due to dynamical evolution \citep{Kroupa2001} of clusters. With the large coverage in mass and area of the 25 Ori system IMF reported here, we can analyze this phenomenon in an association where no dynamical evolutionary effects are expected \citep{deLaFuenteMarcos-deLaFuenteMarcos2000}.
+%its behaviour as a function of the radius, which could contribute to the understanding of this phenomenon.
+
+In Table \ref{tab:imf} and Figure \ref{fig:imf_par}, we observed that the slope fitted to the very low-mass stars and BDs becomes flatter when increasing the radius. Furthermore, the slope for the intermediate and high-mass stars becomes steeper with the radius; a feature also observed in other regions such as NGC 3603 \citep{Stolte2006,Harayama2008}, Arches \citep{Habibi2013} and Westerlund 1 \citep{Brandner2008,Andersen2017}. These systematic features in both sides of the 25 Ori system IMF are evidence of some degree of mass segregation. However, we stress that the changes in the slopes are in agreement within the uncertainties and the slope for the intermediate and high-mass stars is based on small-number statistics.
+
+%Clues of mass segregation has been found in young cluster (1-2 Myr) like the Trapezium \citep{Hillenbrand-Hartmann1998} and NGC 3603 \citep{Nurnberger-Petr-Gotzens2002}. \citet{Bonnell-Davies1998} suggested they are to young to present dynamical mass segregation.
+More evidence of mass segregation has been found in younger cluster like the Trapezium \citep{Hillenbrand-Hartmann1998} and NGC 3603 \citep{Nurnberger-Petr-Gotzens2002}, and has been interpreted as primordial mass segregation \citep{Bonnell-Davies1998}. Additionally, evident mass segragation is present in older clusters like Pleiades \citep{Moraux2004} and Blanco 1 \citep{Moraux2007a}. 
+%If it is found that this mass segregation is due, in part or completely, to the evolution stage of the group, this suggests a more rapid evolution of the cluster as found so far.
+
+Due to the youth of 25 Ori to present dynamical evolutionary effects, we attribute this small degree of mass segregation to a property imprinted during the star formation process, which is in favour of the ejection mechanism of BD formation \citep{Reipurth-Clarke2001}. On the other hand, if this mass segregation is a result of stellar-dynamical evolution, additional constrains should be taken into account in the dynamical evolution simulations to reproduce this effect at the 25 Ori age.
+
+%++++++++++++++++++++++++++++++++++++++++++++
+\subsection{BD/star ratio}
+\label{sec:BD_star_ratio}
+A useful quantity that indicates the efficiency to form stellar and substellar objects is, precisely, the ratio between BDs and stars. We worked with the $R_{ss}$ definition by \citet{Briceno2002}, which considers objects with masses between 0.02 and 10 $M_\odot$ and the BD-star limit at 0.08 $M_\odot$. We obtained $R_{ss}$ values of $0.14\pm0.02$, $0.15\pm0.02$ and $0.18\pm0.03$ for the 25 Ori area by \citet[0.5$^\circ$ radius; ][]{Downes2014}, \citet[0.7$^\circ$ radius; ][]{Briceno2018} and \citet[1.0$^\circ$ radius; ][]{Briceno2005,Briceno2007}. The increase of these values when considering larger areas suggests that the BDs are distributed in a more extended area than the stars, which is an indicative of mass segregation. A similar gradient for this ratio was obtained by \citet{Andersen2011} in the ONC, which was interpreted as a mass segregated cluster. However, the trend observed here is not very pronounced and the differences in the ratios are in agreement within the uncertainties.
+
+The $R_{ss}$ value representative of 25 Ori is $0.16\pm0.04$ i.e. for each 6 stars in 25 Ori we roughly expect 1 BD. This value is consistent with those found in Taurus \citep{Briceno2002} and Blanco 1 \citep{Moraux2007a}, which are clusters with low stellar densities comparable with that in 25 Ori. Also, this value is consistent, within the uncetainties, with that in other regions with higher stellar densities by orders of two or more such as the Trapezium \citep{Briceno2002}, ONC \citep{Kroupa-Bouvier2003}, NGC 6611 \citep{Oliveira2009}, Chamaeleon-I and Lupus-3 \citep{Muzic2015}, IC 348 \citep{Scholz2013} and RCW 38 \citep[as a lower quote; ][]{Muzic2017}. Furthermore, the BD to star ratio we found in 25 Ori is consistent with that on the Galactic plane \citep{Bihain-Scholz2016}. These comparisons indicate that the role the environment plays in the formation of substellar and stellar masses is negligible or minimum, keeping similar proportions in clusters with a diversity of environments. A significantly lower ratio is reported in Collinder 69 \citep[$R_{ss}=0.06$; ][]{Bayo2011}, which calls for more studies in this region convering more extended areas.
+
+%++++++++++++++++++++++++++++++++++++++++++++
+\subsection{Gravitational State of 25 Ori}
+As mentioned by \citet{Lada-Lada2003}, most clusters are dissolved before they reach an age of 10 Myr; only less than 10\% reach older ages and about 4\% survive longer than 100 Myr. 25 Ori is just at this critical point and not conclusive results about its gravitational state have been presented \citep{McGehee2006,Downes2014}. Any cluster, to be gravitationally bound, its escape velocity, $v_{esc}=(2GM/R)^{(1/2)}$, must be larger than its velocity dispersion \citep{Sherry2004}.
+
+Directly counting in the mass distributions shown in Figure \ref{fig:imf}, we obtained a total mass of $169\pm8$, $236\pm10$ and $356\pm15$ $M_\odot$ contained in 25 Ori inside areas of 0.5, 0.7 and 1.0$^\circ$, respectively. The fraction of these masses contained in BDs is $1.36\pm0.35$, $1.47\pm0.31$ and $1.65\pm0.27$\%, respectively. The gradient of this fraction with the radius also reflect the evidence of mass segregation discussed above.
+
+Considering the total mass of 365 $M_\odot$ inside a radius of 1.0$^\circ$, which corresponds to 6.2 pc at a distance of 356 pc, the resultant $v_{esc}$ is 0.7 km/s. A similar $v_{esc}$ is obtained if considering the total mass inside the 0.7 and 0.5$^\circ$ radius. This $v_{esc}$ is about 3 times smaller than the velocity dispersion of 2 km/s in 25 Ori \citep{Briceno2007}, which indicates that 25 Ori is an unbound association. We estimated that to be a gravitationally bound cluster, 25 Ori should have about 10 times more mass than that estimated here, which implies an unrealistic number of more than 6000 members, or to have a significantly smaller velocity dispersion.
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Conclusions}
+%\section{Conclusions}
+\label{sec:conclusions}
+
+% About the sample and contamination
+Combining optical and NIR photometry from DECam, CDSO, UCAC4 and $Hipparcos$, and VISTA and 2MASS, respectively, we selected a sample of 1783 photometric member candidates in an area of 1.1$^\circ$ radius around the 25 Ori overdensity on the basis of their position in color-magnitude and color-color diagrams. This sample covers an $I_c$ range between 5.08 and 25.67 mag, which corresponds to a mass range from $<0.01$ to 13.1 $M_\odot$. The completenes of the sample is at 0.012 $M_\odot$, which is just beyond the Deuterium burning limit (0.013 $M_\odot$), and includes the most massive stars in 25 Ori. We estimated a contamination of 20\% for the LMS candidates, but it increases for the intermediate-mass candidates due to giant and subgiant stars and for BD candidates due to extragalactic sources.
+
+Additionally, we discussed, in the context of 25 Ori, the following uncertainties and biases to be taken into account when determining the mass distribution: spatial completeness, photometric sensitivity, IR excesses, chromospheric activity, unresolved binaries and missed members.
+
+% system IMF
+%With this sample of photometric member candidates we constructed their $M_{I_c}$ and mass distributions, which were corrected by the distributions of the contaminants in the control field. In the resultant distributions we replaced the range mostly affected by giant and subgiant stars ($\sim1-5$ mag or $\sim$0.9 and 3 $M_\odot$) by the distributions of our member candidates filtered by their BJ18 distances. This way we constructed the LFs and system IMFs for the different areas estimated for 25 Ori (see Figures \ref{fig:LF} and \ref{fig:imf}). This 25 Ori system IMF is complete down to 12 $M_{Jup}$ to 13.1 $M_\odot$ (corresponding to the 25 Ori star) and is one of the few system IMFs covering the whole mass range of a stellar group \citep[e.g. the $\sigma$ Ori system IMF by ][]{PenaRamirez2012}. 
+With the sample of member candidates we constructed the system IMF of 25 Ori for different areas, which is complete down to 12 $M_{Jup}$ to 13.1 $M_\odot$ (corresponding to the 25 Ori star) and is one of the few system IMFs covering the whole mass range of a stellar cluster \citep[e.g. the $\sigma$ Ori system IMF by ][]{PenaRamirez2012}. We parameterized the resultant system IMF using a triple power-law, a lognormal and a tapered power-law function to compare it with other studies. The parameters of the best fits are summarized in Table \ref{tab:imf}. We observed that a lognormal function well-fitted to the peak of the mass distribution underestimates the BD population of 25 Ori.
+
+% Comparison of the system IMF and its implications
+We observed some differences in the BD regime when comparing with the system IMF of 25 Ori obtained by \citet{Downes2014}, which can be mainly explained by issues related to the completeness of the CDSO catalog in this mass range. Thus, we discard a low number of BDs in 25 Ori.
+
+In comparison with other clusters having different physical properties, no significant differences were found, which suggest that the convertion of gas into stars and BDs has minimum influence by the enviromental properties, as predicted by models \citep[e.g. ][]{Bonnell2006,Elmegreen2008}. Also, the continuity of the system IMF support the scenario of a formation process that extends from the planetary mass objects to the high-mass stars \citep{Reipurth-Clarke2001}.
+
+% BD/star ratio
+We estimated the substellar to stellar ratio of 25 Ori, which has a representative value of $0.16\pm0.04$. This ratio is consistent with that in other regions with low densities, comparable to that in 25 Ori, and others with high densities as the ONC and RCW 38, which is an indicative that the formation of BDs and stars occurs in a similar way in different enviroments.
+
+% Mass segragation
+The gradient of the slopes with the radius in both sides of the system IMF suggest some degree of mass segregation in 25 Ori, which, due to its youthness, could be interpreted as an imprinted property in the cluster formation \citep{Reipurth-Clarke2001}. This effect is also observed in the gradient of the BDs to stars ratio throughout the cluster as well as, in an equivalent way, in the change of the fraction of the total mass contained in BDs as a function of the radius. However, this possible mass segregation is not very pronounced and can be contained within the uncertainties.
+
+% Bound or not
+Comparing the escape velocity estimated for 25 Ori and its velocity dispersion, we found that 25 Ori is an unbound association. In fact, 25 Ori should have about 10 times more mass or a significantly smaller velocity dispersion to be considered as a gravitationally bound cluster.
+
+% Ongoin work
+The system IMF of 25 Ori we present in this work was constructed with photometric member candidates. To determine the membership of each candidate it is necessary a follow up spectroscopy. Thus, we could determine the distribution of the masses of the confirmed members. This kind of study requires the use of several multi-fiber spectrographs to have full coverage of the brightness range and spatial distribution. In this direction, we have an ongoing spectroscopic survey about 80\% complete, which will be part of future works. 
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section*{Acknowledgments}
+
+GS acknowledges support from the CONACYT/UNAM fellowship.
+GS, CRZ and JJD acknowledge support from programs UNAM-DGAPA-PAPIIT IN116315 and IN108117, Mexico.
+JJD acknowledges support from Secretar\'ia de Relaciones Exteriores del Gobierno de M\'exico.
+
+\par
+% CDSO
+Based on observations obtained at the Llano del Hato National Astronomical Observatory of Venezuela, operated by the Centro de Investigaciones de Astronom{\'\i}a (CIDA) for the Ministerio del Poder Popular para Educaci\'on Universitaria, Ciencia y Tecnolog{\'\i}a.
+
+\par
+% DECam
+This project used data obtained with the Dark Energy Camera (DECam), which was constructed by the Dark Energy Survey (DES) collaborating institutions: Argonne National Lab, University of California Santa Cruz, University of Cambridge, Centro de Investigaciones Energ\'eticas, Medioambientales y Tecnol\'ogicas-Madrid, University of Chicago, University College London, DES-Brazil consortium, University of Edinburgh, ETH-Zurich, University of Illinois at Urbana-Champaign, Institut de Ciencies de l\'Espai, Institut de Fisica d\'Altes Energies, Lawrence Berkeley National Lab, Ludwig-Maximilians Universitat, University of Michigan, National Optical Astronomy Observatory, University of Nottingham, Ohio State University, University of Pennsylvania, University of Portsmouth, SLAC National Lab, Stanford University, University of Sussex, and Texas A\&M University. Funding for DES, including DECam, has been provided by the U.S. Department of Energy, National Science Foundation, Ministry of Education and Science (Spain), Science and Technology Facilities Council (UK), Higher Education Funding Council (England), National Center for Supercomputing Applications, Kavli Institute for Cosmological Physics, Financiadora de Estudos e Projetos, Funda\c{c}\~ao Carlos Chagas Filho de Amparo a Pesquisa, Conselho Nacional de Desenvolvimento Cient\'ifico e Tecnol\'ogico and the Minist\'erio da Ciencia e Tecnologia (Brazil), the German Research Foundation-sponsored cluster of excellence \"Origin and Structure of the Universe\" and the DES collaborating institutions.
+
+\par
+We thank the assistance of the personnel, observers, telescope operators and technical staff at CIDA and CTIO who made possible the observations at the J\"urgen Stock telescope at the Venezuela National Astronomical Observatory (OAN) and Blanco Telescope at CTIO.
+
+\par
+%2MASS
+This publication makes use of data products from the Two Micron All Sky Survey, which is a joint project of the University of Massachusetts and the Infrared Processing and Analysis Center/California Institute of Technology, funded by the National Aeronautics and Space Administration and the National Science Foundation.
+
+\par
+%Gaia
+This work has made use of data from the European Space Agency (ESA) mission
+{\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by the {\it Gaia}
+Data Processing and Analysis Consortium (DPAC,
+\url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC
+has been provided by national institutions, in particular the institutions
+participating in the {\it Gaia} Multilateral Agreement.
+
+\par
+% SDSS photometry
+Funding for the SDSS and SDSS-II has been provided by the Alfred P. Sloan Foundation,
+the Participating Institutions, the National Science Foundation, the U.S. Department
+of Energy, the National Aeronautics and Space Administration, the Japanese Monbukagakusho,
+the Max Planck Society, and the Higher Education Funding Council for England. The SDSS
+Web Site is \url{http://www.sdss.org/}. The SDSS is managed by the Astrophysical Research
+Consortium for the Participating Institutions. The Participating Institutions are the
+American Museum of Natural History, Astrophysical Institute Potsdam, University of Basel,
+University of Cambridge, Case Western Reserve University, University of Chicago,
+Drexel University, Fermilab, the Institute for Advanced Study, the Japan Participation
+Group, Johns Hopkins University, the Joint Institute for Nuclear Astrophysics, the
+Kavli Institute for Particle Astrophysics and Cosmology, the Korean Scientist Group,
+the Chinese Academy of Sciences (LAMOST), Los Alamos National Laboratory,
+the Max-Planck-Institute for Astronomy (MPIA), the Max-Planck-Institute for
+Astrophysics (MPA), New Mexico State University, Ohio State University, University
+of Pittsburgh, University of Portsmouth, Princeton University, the United States Naval
+Observatory, and the University of Washington.
+
+\par
+This work makes extensive use of the following tools: TOPCAT and STILTS available
+at http://www.starlink.ac.uk/topcat/ and http://www.starlink.ac.uk/stilts/, R from
+the R Development Core Team (2011) available at http://www.R-project.org/ and described
+in \emph{R: A language and environment for statistical computing} from R Foundation
+for Statistical Computing, Vienna, Austria. ISBN 3-900051-07-0, IRAF which is
+distributed by the National Optical Astronomy Observatories, which are operated by
+the Association of Universities for Research in Astronomy, Inc., under cooperative
+agreement with the National Science Foundation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+\bibliographystyle{mnras}
+\bibliography{mybib_Suarez} % if your bibtex file is called example.bib
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+%\section{Interstellar Extinction Using Dust Maps}
+%To estimate the extinctions for all our photometric member candidates we tried the dust maps from \citet{Schlegel1998}, \citet{Gontcharov2017} and \citet{Green2018}, which have spatial resolutions of $\sim6.1'$, $1^\circ$, and from $3.4'$ to $13.7'$, respectively. In Figure \ref{fig:extinction} we show the distributions of the resultant extinctions. The mean visual extinctions ($\bar{A}_V$) for the whole member candidate sample are 0.39, 0.30, and 0.12 mag with standard deviations ($\sigma _{A_V}$) of 0.05, 0.05, and 0.01 mag working with the extinction maps from \citet{Schlegel1998}, \citet{Gontcharov2017} and \citet{Green2018}, respectively. In this figure we also included the distribution of the extinctions of the spectroscopically confirmed members in Orion OB1a by \citet{Briceno2005}, \citet{Downes2014,Downes2015}, \citet{Suarez2017}, and C. Brice\~no et al. (2018, in preparation). After removing some outliers (5 members) of this sample, we have a set of 756 confirmed members which have $\bar{A}_V=0.28$ mag and $\sigma _{A_V}=0.29$ mag for all the members in Orion OB1a and $\bar{A}_V=0.26$ mag and $\sigma _{A_V}=0.27$ mag for the 349 members inside the estimated area of 25 Ori \citep[1$^\circ$ radius; ][]{Briceno2005,Briceno2007}. 
+%
+%The extinctions by \citet{Schlegel1998} are upper limits because they are integrated along each direction. Due to the resolution of the \citet{Gontcharov2017} extinction map is similar to the spatial distribution of the member candidates (see Figure \ref{fig:sky}), the resultant extinctions with this map are like an average for 25 Ori. The extinctions estimated by the \citet{Green2018} dust map are significantly lower than expected, which is due to the limitations of this map for nearby positions like 25 Ori because it is not clear how the dust is distributed in this region (E. F. Schlafly 2018, private communication). Therefore, we estimated the extinction for the member candidates without a reported value considering the cumulative distribution of the extinctions of the already confirmed members.
+%
+%\begin{figure}
+%\includegraphics[width=0.48\textwidth]{extinction}
+%\caption{Unit-normalized distributions of the extinction assigned to each member candidate using the extinction maps as labeled in the plot. The normalized distribution of the extinctions in a sample of 570 spectroscopically confirmed members by \citet{Briceno2005}, \citet{Downes2014}, \citet{Downes2015}, \citet{Suarez2017}, and C. Brice\~no et al. (2018, in preparation) is shown by the shaded histogram. We do not include the confirmed members with null extinction to allow a better visualization of the normalized histogram.}
+%\label{fig:extinction}
+%\end{figure}
+
+\section{Transformation of the UCAC4 and DECam photometry to $I_c$ Magnitudes}
+\label{sec_app:photometry_transformation}
+
+As mentioned in Section \ref{sec:merged_cat}, we used the transformations from \citep{Jordi2006} to convert the $i$-band magnitudes from the UCAC4 and DECam into the $I_c$-band magnitudes. These transformations relate the SDSS and Cousins photometric systems, so we checked that both UCAC4 and DECam photometries are in the SDSS system.
+
+\subsection{UCAC4 Data}
+The $r$ and $i$-band photometries in the UCAC4 catalog came from the AAVSO \footnote{\url{https://www.aavso.org}} Photometric All-Sky Survey \citep[][]{Henden2016}. These data were taken using the $r'$ and $i'$-band filters from SDSS, whose magnitudes are on the AB system and are close to the $r$ and $i$ magnitudes of SDSS\footnote{\url{http://www.sdss3.org/dr8/algorithms/fluxcal.php\#SDSStoAB}}. In Figure \ref{fig:SDSS_UCAC4} we show the residuals between the $r$ and $i$ magnitudes from SDSS and UCAC4 as a function of the SDSS magnitudes. In average, these residuals are basically zero for sources brighter than the SDSS saturation limit ($\sim$14 mag), which indicates that the $r$ and $i$-band photometries from UCAC4 can be consider to be in the SDSS photometry system.
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{cc}
+		\subfloat{\includegraphics[width=.50\linewidth]{r_SDSS_vs_r_SDSS-r_UCAC4.pdf}} & 
+		\subfloat{\includegraphics[width=.50\linewidth]{i_SDSS_vs_i_SDSS-i_UCAC4.pdf}} 
+	\end{tabular}
+	\caption{Residual between the SDSS-DR9 and UCAC4 photometry as a function of the SDSS-DR9 magnitudes in the $r$ and $i$ bands (left and right panels, respectively). The black dots show all the sources having SDSS and UCAC4 photometries. The red points indicate photometric member candidates from \citet{Downes2014}}
+	\label{fig:SDSS_UCAC4}
+\end{figure*}
+
+%\begin{figure*}
+%	\epsscale{1.15}
+%	\plottwo{r_SDSS_vs_r_SDSS-r_UCAC4.pdf}{i_SDSS_vs_i_SDSS-i_UCAC4.pdf}
+%	\caption{Residual between the SDSS-DR9 and UCAC4 photometry as a function of the SDSS-DR9 magnitudes in the $r$ and $i$ bands (left and right panels, respectively). The black dots show all the sources having SDSS and UCAC4 photometries. The red points indicate photometric member candidates from \citet{Downes2014}}
+%	\label{fig:SDSS_UCAC4}
+%\end{figure*}
+
+Thus, we worked with the following transformations from \citet{Jordi2006}, which use the $r$ and $i$-band magnitudes from SDSS to obtain $I_c$:
+
+\begin{equation} \label{eq:UCAC_1}
+	%R_c-r = (-0.153 \pm 0.003)*(r-i) - (0.117 \pm 0.003)
+	R_c-r = -0.153*(r-i) - 0.117
+\end{equation}
+\begin{equation} \label{eq:UCAC_2}
+	%R_c-I_c = (0.930 \pm 0.005)*(r-i) + (0.259 \pm 0.002)
+	R_c-I_c = 0.930*(r-i) + 0.259
+\end{equation}
+
+Subtracting Transformation \ref{eq:UCAC_2} from Transformation \ref{eq:UCAC_1}:
+
+\begin{equation} \label{eq:UCAC_3}
+	I_c-r = -1.083*(r-i) -0.376
+\end{equation}
+
+We used Transformation \ref{eq:UCAC_3} to obtain the $I_c$ magnitudes for the UCAC4 $r$ and $i$ magnitudes. We compared the resultant $I_c$ magnitudes with those from the CDSO catalog, which are already in the Cousin system. Additionally, we also compared the resultant $I_c$ magnitudes with the catalog of photometric member candidates by \citet{Downes2014}, using the CDSO photometry. This last comparison allow us to check the residuals focusing on young sources, which are the most interesting objects for this study. In the left panel of Figure \ref{fig:trasformation_UCAC4} we show the residual between the $I_c$ magnitudes from the CDSO and UCAC4 catalogs, where we can see that the peak of the residual distributions is not zero, specially for the member candidate sample from \citet{Downes2014}. Therefore, we did small modifications to the coefficients of Transformation \ref{eq:UCAC_3} to have average residual closer to zero. The resulting transformation is:
+
+\begin{equation} \label{eq:UCAC_4}
+	I_c-r = -1.323*(r-i) -0.353
+\end{equation}
+
+In the right panel of Figure \ref{fig:trasformation_UCAC4} we show the $I_c$ residuals between the CDSO and UCAC4 photometries after applying Transformation \ref{eq:UCAC_4} to the UCAC4 data. The peak of the $I_c$ residual histograms are essentially zero, with $\sigma=0.20$ mag for the member candidates and $\sigma=0.16$ mag for the rest of the sources within the CDSO saturation limit and the UCAC4 completeness limit (13-14.75 mag).
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{cc}
+		\subfloat{\includegraphics[width=.50\linewidth]{transformation_UCAC4_Jordi2006.pdf}} & 
+		\subfloat{\includegraphics[width=.50\linewidth]{transformation_UCAC4_Jordi2006modified.pdf}} 
+	\end{tabular}
+	\caption{Residuals of the $I_c$ magnitudes between the CDSO and UCAC4 catalogs as a function of the CDSO $I_c$ magnitudes and distributions of these residuals after applying Transformation \ref{eq:UCAC_3} \citep[left panel; ][]{Jordi2006} and Transformation \ref{eq:UCAC_4} (right panel), which is a slight modification of Transformation \ref{eq:UCAC_3}. The dots and histograms in black show all the sources having CDSO and UCAC4 photometry inside the CDSO saturation limit and the UCAC4 completeness limit. The points and histograms in red indicate the photometric member candidates from \citet{Downes2014}.}
+	\label{fig:trasformation_UCAC4}
+\end{figure*}
+%\begin{figure*}
+%	\epsscale{1.15}
+%	\plottwo{transformation_UCAC4_Jordi2006.pdf}{transformation_UCAC4_Jordi2006modified.pdf}
+%	\caption{Residuals of the $I_c$ magnitudes between the CDSO and UCAC4 catalogs as a function of the CDSO $I_c$ magnitudes and distributions of these residuals after applying Transformation \ref{eq:UCAC_3} \citep[left panel; ][]{Jordi2006} and Transformation \ref{eq:UCAC_4} (right panel), which is a slight modification of Transformation \ref{eq:UCAC_3}. The dots and histograms in black show all the sources having CDSO and UCAC4 photometry inside the CDSO saturation limit and the UCAC4 completeness limit. The points and histograms in red indicate the photometric member candidates from \citet{Downes2014}.}
+%	\label{fig:trasformation_UCAC4}
+%\end{figure*}
+
+\subsection{DECam Data}
+The $i$ filter used in our DECam observations is similar to the $i$ filter from SDSS (NOAO Data Handbook\footnote{\url{http://ast.noao.edu/sites/default/files/NOAO\_DHB\_v2.2.pdf}}). 
+Thus, we added to the DECam data the 0.65 mag offset with respect to the $i$ magnitudes from SDSS, as mentioned in Section \ref{sec:DECam}. In Figure \ref{fig:SDSS_DECam} we show the residual between the $i$ magnitudes from SDSS and DECam as a function of the SDSS $i$ magnitudes after we added to the DECam photometry the offset.
+
+\begin{figure}
+	\centering\includegraphics[width=0.5\textwidth]{i_SDSS_vs_i_SDSS-i_DECam.pdf}
+	\caption{Residuals between the $i$ magnitudes from the SDSS and DECam catalogs as a function of the SDSS $i$ magnitude. The black dots represent the sources with both SDSS and DECam photometry. The red points are the same as in Figure \ref{fig:SDSS_UCAC4}.}
+	\label{fig:SDSS_DECam}
+\end{figure}
+
+To transform the $i$ magnitudes from DECam to $I_c$ magnitudes, it is necessary to have another photometric band to use color-dependent transformations. For this purpose, besides the DECam data we considered the $Z$-band photometry from VISTA. This way, we will transform the DECam photometry only for the sources with VISTA counterpart, which is not an issue because for the selection of member candidates we used both catalogs. This $Z$-band photometry from VISTA is in the Vega system and to convert it to $z'$-band magnitudes in the AB system it is necessary to add the zero-point of 0.58 mag \citep{Pickles2010}. These $z'$-band magnitudes are not exactly the same as the $z$-band magnitudes in the SDSS system, there is a small shift of 0.02 mag which should be subtracted\footnote{\url{http://www.sdss3.org/dr8/algorithms/fluxcal.php\#SDSStoAB}}. Therefore, we added to the $Z$-band photometry from VISTA 0.56 mag to obtain the $z$-band magnitudes in the SDSS system. In Figure \ref{fig:trasformation_VISTA} we show the residuals between the $z$ magnitudes from SDSS and VISTA, which are, in average, basically zero.
+
+%\textcolor{red}{HASTA AQU\'I REVISADO POR JUAN (COMENTARIOS 
+%EN AZUL). 22 DE AGOSTO, 15:00, URUGUAY / 11:00 ENSENADA}
+
+\begin{figure}
+	\centering\includegraphics[width=0.5\textwidth]{transformation_VISTA_PD2010.pdf}
+	\caption{Residuals between the $z$ magnitudes from the SDSS and VISTA catalogs after we added to the $Z$ photometry from VISTA an offset of 0.56 mag to obtain $z$ magnitudes. The points and histograms in black show all the sources with SDSS and VISTA photometry inside the VISTA saturation limit and the SDSS completeness limit. The points and histograms in red are the same as in Figure \ref{fig:trasformation_UCAC4}.}
+	\label{fig:trasformation_VISTA}
+\end{figure}
+
+Once we have both $i$ and $z$ magnitudes from DECam and VISTA, respectively, in the SDSS system, we use the following transformation from \citet{Jordi2006} to obtained the $I_c$ magnitudes:
+
+\begin{equation} \label{eq:DECam_1}
+	%I_c-i = (-0.386 \pm 0.004)*(i-z) - (0.397 \pm 0.001)
+	I_c-i = -0.386*(i-z) - 0.397
+\end{equation}
+
+Similarly that when obtaining the $I_c$ magnitudes from the UCAC4 catalog, we compared the $I_c$ magnitudes for the DECam sources with VISTA counterpart with respect to the CDSO catalog and the photometric member candidates by \citet{Downes2014}. In the left panel of Figure \ref{fig:trasformation_DECam} we show these residuals, where we can see that the peak of the residual distribution of the member candidates is slightly deviated of zero. Therefore, we modified the coefficients of Transformation \ref{eq:DECam_1} to have residuals closer to zero. The resultant transformation we used is:
+
+\begin{equation} \label{eq:DECam_2}
+	I_c-i = -0.470*(i-z) - 0.400
+\end{equation}
+
+In the right panel of Figure \ref{fig:trasformation_DECam} we show the residuals of the $I_c$ magnitudes between the CDSO and DECam catalogs after applying Transformation \ref{eq:DECam_2} to the DECam sources with VISTA counterpart. The residuals are practically zero, with $\sigma=0.25$ mag for the member candidates by \citet{Downes2014} and $\sigma=0.14$ mag for the rest of the sources within the DECam saturation limit and the CDSO completeness limit (16-19.75 mag).
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{cc}
+		\subfloat{\includegraphics[width=.50\linewidth]{transformation_DECam_Jordi2006.pdf}} & 
+		\subfloat{\includegraphics[width=.50\linewidth]{transformation_DECam_Jordi2006modified.pdf}} 
+	\end{tabular}
+	\caption{Residuals of the $I_c$ magnitudes between the CDSO and DECam catalogs as a function of the CDSO $I_c$ magnitudes and distributions of these residuals after applying Transformation \ref{eq:DECam_1} \citep[left panel; ][]{Jordi2006} and Transformation \ref{eq:DECam_2} (right panel), which is a slight modification of Transformation \ref{eq:DECam_1}. The dots and histograms in black show all the sources having CDSO and DECam photometry. The points and histograms in red are the same as in Figure \ref{fig:trasformation_UCAC4}.}
+	\label{fig:trasformation_DECam}
+\end{figure*}
+%\begin{figure*}
+%	\epsscale{1.15}
+%	\plottwo{transformation_DECam_Jordi2006.pdf}{transformation_DECam_Jordi2006modified.pdf}
+%	\caption{Residuals of the $I_c$ magnitudes between the CDSO and DECam catalogs as a function of the CDSO $I_c$ magnitudes and distributions of these residuals after applying Transformation \ref{eq:DECam_1} \citep[left panel; ][]{Jordi2006} and Transformation \ref{eq:DECam_2} (right panel), which is a slight modification of Transformation \ref{eq:DECam_1}. The dots and histograms in black show all the sources having CDSO and DECam photometry. The points and histograms in red are the same as in Figure \ref{fig:trasformation_UCAC4}.}
+%	\label{fig:trasformation_DECam}
+%\end{figure*}
+
+\section{25 Ori Distance}
+\label{sec_app:distance}
+
+To estimate the 25 Ori distance we first compiled a list of 334 spectroscopically confirmed members of 25 Ori by \citet{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018}. Then, we crossmatched this list with the BJ18 catalog to obtain the distances of the confirmed members. This catalog has the point distance estimate and a measure of the uncertainty for each source with Gaia DR2 parallax, even if it is negative and/or has very low signal-to-noise ratio. The uncertainties are represented by upper and lower limits which contain about 68\% (one standard deviation) of the confidence interval. We considered as the uncertainty for each point distance a half of the interval between its upper and lower limits. 90\% of the confirmed members of 25 Ori have distances from BJ18 with uncertainties less than 20\%. In the left panel of Figure \ref{fig:cum_dist} we show the cumulative distribution of these distances, which cover a range from 127 to 545 pc (excluding two confirmed members 625 and 777 pc away), but there is a clear concentration of members around the 25 Ori expected distance with 94\% of the member between 250 and 450 pc. From these distances we obtained that 25 Ori is 356$\pm$47 pc away, which is consistent with previous studies \citep{Briceno2007,Downes2014,Suarez2017,Briceno2018,Kounkel2018}.
+
+\section{25 Ori Extinction}
+\label{sec_app:extinction}
+
+About 96\% of the 334 confirmed members of 25 Ori by \citet{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018} have reported visual extinctions obtained through spectroscopic analysis. In the right panel of Figure \ref{fig:cum_dist} we show the cumulative distribution of these extinctions, which go up to 1.88 mag (excluding two members with values of 3.53 and 6.29 mag) but more than 93\% of the members with reported extinction have values lower than 1 mag. Considering values up to 1.88 mag, the mean extinction of the 25 Ori is 0.35$\pm$0.35 mag. If we consider values lower than 1 mag, the 25 Ori mean extinction is 0.29$\pm$0.26 mag. As expected, both mean extinctions are consistent with previous studies \citep{Kharchenko2005,Briceno2005,Briceno2007,Downes2014,Suarez2017,Briceno2018}. 
+
+\begin{figure*}
+	\centering
+	\begin{tabular}{cc}
+		\subfloat{\includegraphics[width=.50\linewidth]{cumulative_distribution_d.pdf}} & 
+		\subfloat{\includegraphics[width=.50\linewidth]{cumulative_distribution_Av.pdf}} 
+	\end{tabular}
+	\caption{Normalized cumulative distributions of the distances (left panel) and extinctions (right panel) for the spectroscopically confirmed members of 25 Ori by \citet[][]{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018}. The distances are from BJ18 and have uncertainties less than 20\%. The extinctions were mostly estimated through spectral analysis and combing optical and NIR photometry.}
+	\label{fig:cum_dist}
+\end{figure*}
+%\begin{figure*}
+%	\epsscale{1.15}
+%	\plottwo{cumulative_distribution_d.pdf}{cumulative_distribution_Av.pdf}
+%	\caption{Normalized cumulative distributions of the distances (left panel) and extinctions (right panel) for the spectroscopically confirmed members of 25 Ori by \citet[][]{Briceno2005,Briceno2007,Downes2014,Downes2015,Suarez2017,Briceno2018}. The distances are from BJ18 and have uncertainties less than 20\%. The extinctions were mostly estimated through spectral analysis and combing optical and NIR photometry.}
+%	\label{fig:cum_dist}
+%\end{figure*}
+
+\section{Distances and Extinctions for the Member Candidates and Contaminants}
+\label{sec_app:distance_extinction}
+As we do not have distances and extinctions for all the member candidates (81\% have distances and 16\% have extinctions) and contaminants, we need to assign these values to the whole samples to have consistency with the 25 Ori members. The most common way to do this in photometric studies in the literature is to consider the mean distance and extinction of the cluster for all the member candidates. Here, we can take advantage of the Gaia DR2 parallaxes as well as of the previous spectroscopic studies in 25 Ori to use a statistically more robust technique.
+
+Considering the inverse of the normalized cumulative distribution of the BJ18 distances of the 25 Ori confirmed members (left panel of Figure \ref{fig:cum_dist}), we created random realizations to assign distance values to all our member candidates and contaminants. We also assigned extinction values to these samples in a similar way, but considering the normalized cumulative distribution of the reported extinctions of the 25 Ori confirmed members (right panel of Figure \ref{fig:cum_dist}). This way, the distance and extinction values we assigned to each candidate and contaminant are consistent with those for the confirmed members of 25 Ori.
+
+
+%\textcolor{red}{HASTA AQU\'I REVISADO POR JUAN (COMENTARIOS 
+%EN AZUL). 22 DE AGOSTO, 16:00, URUGUAY / 12:00 ENSENADA}
+
+
+%With these extinctions we constructed the normalized cumulative distribution shown in the right panel of Figure \ref{fig:cum_dist}. We used this distribution to assign extinctions for the whole sample of member candidates similarly than when assigning distances but with the distribution of the extinctions.
+
+%because the distribution of distances 
+%Not all the photometric member candidates have parallax measurements by Gaia DR2 \citep{GaiaCollaboration2018} and/or visual extinction reported in previous spectroscopic studies \citep{Briceno2005,Downes2014,Downes2015,Suarez2017,Briceno2018}. Therefore, it is necessary to assign a distance and/or extinction value for all the member candidates with null values.
+
+%%--------------------------BIBLIOGRAPHY---------------------------
+%\clearpage
+%
+%%\setlength{\baselineskip}{0.6\baselineskip}
+%\bibliography{mybib_Suarez}
+%%\setlength{\baselineskip}{1.667\baselineskip}
+%%\bibliography{ref_suarez}{}
+%%\bibliographystyle{plain}
+%
+\end{document}
